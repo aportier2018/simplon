@@ -6,20 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Unicat project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="simplon/styles/bootstrap4/bootstrap.min.css">
+<link href="simplon/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="simplon/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="simplon/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="simplon/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="simplon/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="simplon/styles/responsive.css">
 </head>
 <body>
 
 <div class="super_container">
 
 	<!-- Header -->
-	<?php include("include/header") ?>
+	<?php include("simplon/include/header.php") ?>
 	<!-- Header -->
 
 	<!-- Menu -->
@@ -41,7 +41,7 @@
 				<li class="menu_mm"><a href="#">Courses</a></li>
 				<li class="menu_mm"><a href="#">Blog</a></li>
 				<li class="menu_mm"><a href="#">Page</a></li>
-				<li class="menu_mm"><a href="contact.html">Contact</a></li>
+				<li class="menu_mm"><a href="simplon/contact.html">Contact</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -56,7 +56,7 @@
 
 				<!-- Home Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(simplon/images/home_slider_1.jpg)"></div>
 					<div class="home_slider_content">
 						<div class="container">
 							<div class="row">
@@ -89,7 +89,7 @@
 
 				<!-- Home Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(simplon/images/home_slider_1.jpg)"></div>
 					<div class="home_slider_content">
 						<div class="container">
 							<div class="row">
@@ -122,7 +122,7 @@
 
 				<!-- Home Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(simplon/images/home_slider_1.jpg)"></div>
 					<div class="home_slider_content">
 						<div class="container">
 							<div class="row">
@@ -179,7 +179,7 @@
 				<!-- Features Item -->
 				<div class="col-lg-3 feature_col">
 					<div class="feature text-center trans_400">
-						<div class="feature_icon"><img src="images/icon_1.png" alt=""></div>
+						<div class="feature_icon"><img src="simplon/images/icon_1.png" alt=""></div>
 						<h3 class="feature_title">The Experts</h3>
 						<div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
 					</div>
@@ -188,7 +188,7 @@
 				<!-- Features Item -->
 				<div class="col-lg-3 feature_col">
 					<div class="feature text-center trans_400">
-						<div class="feature_icon"><img src="images/icon_2.png" alt=""></div>
+						<div class="feature_icon"><img src="simplon/images/icon_2.png" alt=""></div>
 						<h3 class="feature_title">Book & Library</h3>
 						<div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
 					</div>
@@ -197,7 +197,7 @@
 				<!-- Features Item -->
 				<div class="col-lg-3 feature_col">
 					<div class="feature text-center trans_400">
-						<div class="feature_icon"><img src="images/icon_3.png" alt=""></div>
+						<div class="feature_icon"><img src="simplon/images/icon_3.png" alt=""></div>
 						<h3 class="feature_title">Best Courses</h3>
 						<div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
 					</div>
@@ -206,7 +206,7 @@
 				<!-- Features Item -->
 				<div class="col-lg-3 feature_col">
 					<div class="feature text-center trans_400">
-						<div class="feature_icon"><img src="images/icon_4.png" alt=""></div>
+						<div class="feature_icon"><img src="simplon/images/icon_4.png" alt=""></div>
 						<h3 class="feature_title">Award & Reward</h3>
 						<div class="feature_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p></div>
 					</div>
@@ -219,7 +219,7 @@
 	<!-- Popular Courses -->
 
 	<div class="courses">
-		<div class="section_background parallax-window" data-parallax="scroll" data-image-src="images/courses_background.jpg" data-speed="0.8"></div>
+		<div class="section_background parallax-window" data-parallax="scroll" data-image-src="simplon/images/courses_background.jpg" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -234,9 +234,9 @@
 				<!-- Course -->
 				<div class="col-lg-4 course_col">
 					<div class="course">
-						<div class="course_image"><img src="images/course_1.jpg" alt=""></div>
+						<div class="course_image"><img src="simplon/images/course_1.jpg" alt=""></div>
 						<div class="course_body">
-							<h3 class="course_title"><a href="course.html">Software Training</a></h3>
+							<h3 class="course_title"><a href="simplon/course.html">Software Training</a></h3>
 							<div class="course_teacher">Mr. John Taylor</div>
 							<div class="course_text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
@@ -261,9 +261,9 @@
 				<!-- Course -->
 				<div class="col-lg-4 course_col">
 					<div class="course">
-						<div class="course_image"><img src="images/course_2.jpg" alt=""></div>
+						<div class="course_image"><img src="simplon/images/course_2.jpg" alt=""></div>
 						<div class="course_body">
-							<h3 class="course_title"><a href="course.html">Developing Mobile Apps</a></h3>
+							<h3 class="course_title"><a href="simplon/course.html">Developing Mobile Apps</a></h3>
 							<div class="course_teacher">Ms. Lucius</div>
 							<div class="course_text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
@@ -288,9 +288,9 @@
 				<!-- Course -->
 				<div class="col-lg-4 course_col">
 					<div class="course">
-						<div class="course_image"><img src="images/course_3.jpg" alt=""></div>
+						<div class="course_image"><img src="simplon/images/course_3.jpg" alt=""></div>
 						<div class="course_body">
-							<h3 class="course_title"><a href="course.html">Starting a Startup</a></h3>
+							<h3 class="course_title"><a href="simplon/course.html">Starting a Startup</a></h3>
 							<div class="course_teacher">Mr. Charles</div>
 							<div class="course_text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
@@ -324,7 +324,7 @@
 	<!-- Counter -->
 
 	<div class="counter">
-		<div class="counter_background" style="background-image:url(images/counter_background.jpg)"></div>
+		<div class="counter_background" style="background-image:url(simplon/images/counter_background.jpg)"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -406,7 +406,7 @@
 				<!-- Event -->
 				<div class="col-lg-4 event_col">
 					<div class="event event_left">
-						<div class="event_image"><img src="images/event_1.jpg" alt=""></div>
+						<div class="event_image"><img src="simplon/images/event_1.jpg" alt=""></div>
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
 							<div class="event_date">
 								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
@@ -431,7 +431,7 @@
 				<!-- Event -->
 				<div class="col-lg-4 event_col">
 					<div class="event event_mid">
-						<div class="event_image"><img src="images/event_2.jpg" alt=""></div>
+						<div class="event_image"><img src="simplon/images/event_2.jpg" alt=""></div>
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
 							<div class="event_date">
 								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
@@ -456,7 +456,7 @@
 				<!-- Event -->
 				<div class="col-lg-4 event_col">
 					<div class="event event_right">
-						<div class="event_image"><img src="images/event_3.jpg" alt=""></div>
+						<div class="event_image"><img src="simplon/images/event_3.jpg" alt=""></div>
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
 							<div class="event_date">
 								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
@@ -485,7 +485,7 @@
 	<!-- Team -->
 
 	<div class="team">
-		<div class="team_background parallax-window" data-parallax="scroll" data-image-src="images/team_background.jpg" data-speed="0.8"></div>
+		<div class="team_background parallax-window" data-parallax="scroll" data-image-src="simplon/images/team_background.jpg" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -500,7 +500,7 @@
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="images/team_1.jpg" alt=""></div>
+						<div class="team_image"><img src="simplon/images/team_1.jpg" alt=""></div>
 						<div class="team_body">
 							<div class="team_title"><a href="#">Jacke Masito</a></div>
 							<div class="team_subtitle">Marketing & Management</div>
@@ -518,7 +518,7 @@
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="images/team_2.jpg" alt=""></div>
+						<div class="team_image"><img src="simplon/images/team_2.jpg" alt=""></div>
 						<div class="team_body">
 							<div class="team_title"><a href="#">William James</a></div>
 							<div class="team_subtitle">Designer & Website</div>
@@ -536,7 +536,7 @@
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="images/team_3.jpg" alt=""></div>
+						<div class="team_image"><img src="simplon/images/team_3.jpg" alt=""></div>
 						<div class="team_body">
 							<div class="team_title"><a href="#">John Tyler</a></div>
 							<div class="team_subtitle">Quantum mechanics</div>
@@ -554,7 +554,7 @@
 				<!-- Team Item -->
 				<div class="col-lg-3 col-md-6 team_col">
 					<div class="team_item">
-						<div class="team_image"><img src="images/team_4.jpg" alt=""></div>
+						<div class="team_image"><img src="simplon/images/team_4.jpg" alt=""></div>
 						<div class="team_body">
 							<div class="team_title"><a href="#">Veronica Vahn</a></div>
 							<div class="team_subtitle">Math & Physics</div>
@@ -591,8 +591,8 @@
 					<!-- News Post Large -->
 					<div class="news_post_large_container">
 						<div class="news_post_large">
-							<div class="news_post_image"><img src="images/news_1.jpg" alt=""></div>
-							<div class="news_post_large_title"><a href="blog_single.html">Here’s What You Need to Know About Online Testing for the ACT and SAT</a></div>
+							<div class="news_post_image"><img src="simplon/images/news_1.jpg" alt=""></div>
+							<div class="news_post_large_title"><a href="simplon/blog_single.html">Here’s What You Need to Know About Online Testing for the ACT and SAT</a></div>
 							<div class="news_post_meta">
 								<ul>
 									<li><a href="#">admin</a></li>
@@ -602,7 +602,7 @@
 							<div class="news_post_text">
 								<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take. Can America learn anything from other nations...</p>
 							</div>
-							<div class="news_post_link"><a href="blog_single.html">read more</a></div>
+							<div class="news_post_link"><a href="simplon/blog_single.html">read more</a></div>
 						</div>
 					</div>
 				</div>
@@ -612,7 +612,7 @@
 
 						<!-- News Posts Small -->
 						<div class="news_post_small">
-							<div class="news_post_small_title"><a href="blog_single.html">Home-based business insurance issue (Spring 2017 - 2018)</a></div>
+							<div class="news_post_small_title"><a href="simplon/blog_single.html">Home-based business insurance issue (Spring 2017 - 2018)</a></div>
 							<div class="news_post_meta">
 								<ul>
 									<li><a href="#">admin</a></li>
@@ -623,7 +623,7 @@
 
 						<!-- News Posts Small -->
 						<div class="news_post_small">
-							<div class="news_post_small_title"><a href="blog_single.html">2018 Fall Issue: Credit Card Comparison Site Survey (Summer 2018)</a></div>
+							<div class="news_post_small_title"><a href="simplon/blog_single.html">2018 Fall Issue: Credit Card Comparison Site Survey (Summer 2018)</a></div>
 							<div class="news_post_meta">
 								<ul>
 									<li><a href="#">admin</a></li>
@@ -634,7 +634,7 @@
 
 						<!-- News Posts Small -->
 						<div class="news_post_small">
-							<div class="news_post_small_title"><a href="blog_single.html">Cuentas de cheques gratuitas una encuesta de Consumer Action</a></div>
+							<div class="news_post_small_title"><a href="simplon/blog_single.html">Cuentas de cheques gratuitas una encuesta de Consumer Action</a></div>
 							<div class="news_post_meta">
 								<ul>
 									<li><a href="#">admin</a></li>
@@ -663,7 +663,7 @@
 	<!-- Newsletter -->
 
 	<div class="newsletter">
-		<div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="images/newsletter.jpg" data-speed="0.8"></div>
+		<div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="simplon/images/newsletter.jpg" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -690,21 +690,21 @@
 	</div>
 
 	<!-- Footer -->
-	<?php include("include/footer.php") ?>
+	<?php include("simplon/include/footer.php") ?>
 
 </div>
 
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="styles/bootstrap4/popper.js"></script>
-<script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="plugins/easing/easing.js"></script>
-<script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="simplon/js/jquery-3.2.1.min.js"></script>
+<script src="simplon/styles/bootstrap4/popper.js"></script>
+<script src="simplon/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="simplon/plugins/greensock/TweenMax.min.js"></script>
+<script src="simplon/plugins/greensock/TimelineMax.min.js"></script>
+<script src="simplon/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="simplon/plugins/greensock/animation.gsap.min.js"></script>
+<script src="simplon/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="simplon/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="simplon/plugins/easing/easing.js"></script>
+<script src="simplon/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="simplon/js/custom.js"></script>
 </body>
 </html>
