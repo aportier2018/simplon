@@ -18,9 +18,9 @@
 
 <div class="super_container">
 
-	<!-- Header -->
+	<!-- Headeri -->
 	<?php include("simplon/include/headeri.php") ?>
-	<!-- Header -->
+	<!-- Headeri-->
 
 	<!-- Home -->
 
@@ -665,10 +665,10 @@
 		</div>
 	</div>
 
-	<!-- Footer -->
+	<!-- Footeri -->
 	<?php include("simplon/include/footeri.php") ?>
-	<!-- Footer -->
-	
+	<!-- Footeri -->
+
 </div>
 
 <script src="simplon/js/jquery-3.2.1.min.js"></script>

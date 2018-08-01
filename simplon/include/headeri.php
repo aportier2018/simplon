@@ -99,8 +99,9 @@
         <li class="menu_mm"><a href="#">Courses</a></li>
         <li class="menu_mm"><a href="#">Blog</a></li>
         <li class="menu_mm"><a href="#">Page</a></li>
-        <li class="menu_mm"><a href="simplon/contact.html">Contact</a></li>
+        <li class="menu_mm"><a href="#">Contact</a></li>
       </ul>
     </nav>
   </div>
+</header>
 </header>

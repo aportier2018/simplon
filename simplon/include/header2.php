@@ -40,12 +40,12 @@
             </div>
             <nav class="main_nav_contaner ml-auto">
               <ul class="main_nav">
-                <li class="active"><a href="../../index.php">Home</a></li>
-                <li><a href="../about.php">About</a></li>
-                <li><a href="./simplon/courses.html">Courses</a></li>
-                <li><a href="./simplon/blog.html">Blog</a></li>
+                <li class="active"><a href="../index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="courses.php">Courses</a></li>
+                <li><a href="blog.php">Blog</a></li>
                 <li><a href="#">Page</a></li>
-                <li><a href="./simplon/contact.html">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
               </ul>
               <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 

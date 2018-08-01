@@ -55,11 +55,11 @@
                 <div class="footer_title">Contact Us</div>
                 <div class="footer_links_container">
                   <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="#">Features</a></li>
-                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="courses.php">Courses</a></li>
                     <li><a href="#">Events</a></li>
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">FAQs</a></li>
