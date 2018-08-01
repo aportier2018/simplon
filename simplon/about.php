@@ -12,15 +12,17 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+
 <link rel="stylesheet" type="text/css" href="styles/about.css">
 <link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
 </head>
 <body>
+<?php $idpage="about"; ?>
 
 <div class="super_container">
 
 	<!-- Header2 -->
-	<?php include("include/header2.php") ?>
+	<?php include("include/header2.php"); ?>
 	<!-- Header2-->
 
 	<!-- Home -->
@@ -358,7 +360,7 @@
 
 
 		<!-- Footer2-->
-		<?php include("include/footer2.php") ?>
+		<?php include("include/footer2.php"); ?>
 		<!-- Footer2 -->
 
 </div>

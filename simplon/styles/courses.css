@@ -114,11 +114,11 @@ p a:hover::after
 }
 ::selection
 {
-	
+
 }
 p::selection
 {
-	
+
 }
 h1{font-size: 48px;}
 h2{font-size: 36px;}
@@ -135,14 +135,14 @@ h1, h2, h3, h4, h5, h6
 	color: #384158;
 	margin-bottom: 0;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
 h6::selection
 {
-	
+
 }
 .form-control
 {
@@ -268,7 +268,7 @@ section
 .top_bar
 {
 	width: 100%;
-	background: #14bdee;
+	background: #000;
 }
 .header.scrolled .top_bar
 {
@@ -282,7 +282,7 @@ section
 .top_bar_content
 {
 	width: 100%;
-	height: 40px;
+	height: 50px;
 }
 .top_bar_contact_list li
 {
@@ -299,7 +299,7 @@ section
 .top_bar_contact_list li > div
 {
 	display: inline-block;
-	font-size: 14px;
+	font-size: 15px;
 	color: #FFFFFF;
 }
 .top_bar_contact_list li > div
@@ -308,7 +308,7 @@ section
 }
 .top_bar_contact_list li:not(:last-child)
 {
-	margin-right: 21px;
+	margin-right: 90px;
 }
 .top_bar_login
 {
@@ -376,25 +376,16 @@ section
 {
 	max-width: 100%;
 }
-.logo_text
+
+.logo_simplon
 {
-	font-family: 'Roboto Slab', serif;
-	font-size: 36px;
-	font-weight: 700;
-	line-height: 0.75;
-	color: #384158;
-	vertical-align: middle;
-	margin-left: 4px;
-	-webkit-transition: all 200ms ease;
-	-moz-transition: all 200ms ease;
-	-ms-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
+background-image : url("../images/logo-couleur.png");
+background-size: cover;
+width : 120px;
+height: 100px;
 }
-.logo_text span
-{
-	color: #14bdee;
-}
+
+
 .header.scrolled .logo
 {
 	width: 40px;
@@ -411,7 +402,7 @@ section
 
 .main_nav_contaner
 {
-
+	margin-left:17%;
 }
 .main_nav,
 .search_button,
@@ -432,7 +423,7 @@ section
 {
 	font-size: 18px;
 	font-weight: 500;
-	color: #384158;
+	color: #000;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -442,7 +433,7 @@ section
 .main_nav li a:hover,
 .main_nav li.active a
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .main_nav li.active::after
 {
@@ -452,7 +443,7 @@ section
 	left: 0;
 	width: 100%;
 	height: 2px;
-	background: #14bdee;
+	/* background: #14bdee; */
 	content: '';
 }
 .search_button
@@ -711,9 +702,9 @@ section
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: rgba(0,0,0,0.4) !important;
-} 
+}
 .menu .search_input:-ms-input-placeholder
-{ 
+{
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px !important;
 	font-weight: 400 !important;
@@ -1461,9 +1452,9 @@ section
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #FFFFFF !important;
-} 
+}
 .newsletter_input:-ms-input-placeholder
-{ 
+{
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	color: #FFFFFF !important;
@@ -1491,7 +1482,7 @@ section
 }
 
 /*********************************
-10. Footer
+14. Footer
 *********************************/
 
 .footer
@@ -1499,7 +1490,7 @@ section
 	display: block;
 	position: relative;
 	width: 100%;
-	background: #1e2434;
+	background: #35345b;
 	padding-top: 94px;
 }
 .footer_background
@@ -1546,6 +1537,19 @@ section
 {
 	margin-top: -14px;
 }
+
+p.footer_logo_text{
+	text-align: center;
+}
+
+.footer_logo_simplon
+{
+	background-image : url("../images/logo-couleur.png");
+	background-size: cover;
+	width : 120px;
+	height: 100px;
+	margin: 0 auto;
+}
 .footer_about_text
 {
 	margin-top: 31px;
@@ -1563,7 +1567,7 @@ section
 	display: inline-block;
 	width: 45px;
 	height: 45px;
-	background: #4b505d;
+	background: #f3f3f3;
 	border-radius: 50%;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -1583,12 +1587,12 @@ section
 }
 .footer_social ul li a i
 {
-	color: #FFFFFF;
+	color: #000;
 	line-height: 45px;
 }
 .footer_social ul li:hover
 {
-	background: #14bdee;
+	background: #e80041;
 }
 .footer_contact
 {
@@ -1602,7 +1606,7 @@ section
 {
 	font-size: 14px;
 	font-weight: 400;
-	color: #b5b8be;
+	color: #f3f3f3;
 }
 .footer_contact_info ul li:not(:last-child)
 {
@@ -1625,7 +1629,7 @@ section
 .footer_links_container ul li a
 {
 	font-size: 14px;
-	color: #b5b8be;
+	color: #f3f3f3;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-ms-transition: all 200ms ease;
@@ -1638,7 +1642,7 @@ section
 }
 .footer_links_container ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .footer_mobile
 {
@@ -1678,7 +1682,7 @@ section
 }
 .cr_text a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .cr_list li:not(:last-child)
 {
@@ -1696,5 +1700,5 @@ section
 }
 .cr_list li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }

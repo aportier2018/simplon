@@ -13,11 +13,11 @@
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 </head>
 <body>
-
+<?php $idpage="blog"; ?>
 <div class="super_container">
 
 	<!-- Header2 -->
-	<?php include("include/header2.php") ?>
+	<?php include("include/header2.php"); ?>
 	<!-- Header2-->
 
 	<!-- Home -->
@@ -217,7 +217,7 @@
 	</div>
 
 	<!-- Footer2-->
-	<?php include("include/footer2.php") ?>
+	<?php include("include/footer2.php"); ?>
 	<!-- Footer2 -->
 
 </div>

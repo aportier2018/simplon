@@ -12,11 +12,11 @@
 <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 </head>
 <body>
-
+<?php $idpage = "contact"; ?>
 <div class="super_container">
 
 	<!-- Header2 -->
-	<?php include("include/header2.php") ?>
+	<?php include("include/header2.php"); ?>
 	<!-- Header2-->
 
 	<!-- Home -->
@@ -67,22 +67,22 @@
 					<!-- Contact Form -->
 					<div class="col-lg-6">
 						<div class="contact_form">
-							<div class="contact_info_title">Contact Form</div>
-							<form action="#" class="comment_form">
+							<div class="contact_info_title">Formulaire de contact</div>
+							<form action="validation_contact.php" method="POST" class="comment_form">
 								<div>
-									<div class="form_title">Name</div>
-									<input type="text" class="comment_input" required="required">
+									<div class="form_title">Nom</div>
+									<input type="text" name="nom" class="comment_input" required="required">
 								</div>
 								<div>
 									<div class="form_title">Email</div>
-									<input type="text" class="comment_input" required="required">
+									<input type="text" name="email" class="comment_input" required="required">
 								</div>
 								<div>
 									<div class="form_title">Message</div>
-									<textarea class="comment_input comment_textarea" required="required"></textarea>
+									<textarea name="commentaire" class="comment_input comment_textarea" required="required"></textarea>
 								</div>
 								<div>
-									<button type="submit" class="comment_button trans_200">submit now</button>
+									<button type="submit" class="comment_button trans_200">Soumettre</button>
 								</div>
 							</form>
 						</div>
@@ -91,24 +91,24 @@
 					<!-- Contact Info -->
 					<div class="col-lg-6">
 						<div class="contact_info">
-							<div class="contact_info_title">Contact Info</div>
+							<div class="contact_info_title">Info Contact</div>
 							<div class="contact_info_text">
-								<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a distribution of letters.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo .</p>
 							</div>
 							<div class="contact_info_location">
-								<div class="contact_info_location_title">New York Office</div>
+								<div class="contact_info_location_title">Fabrique Charleville-Mèzières</div>
 								<ul class="location_list">
-									<li>T8/480 Collins St, Melbourne VIC 3000, New York</li>
-									<li>1-234-567-89011</li>
-									<li>info.deercreative@gmail.com</li>
+									<li>Site : https://simplon.co/charleville/</li>
+									<li>Tél :  (00 33) (0)3 24 56 62 62</li>
+									<li>18 avenue corneau, 08000 Charleville-mézières, France</li>
 								</ul>
 							</div>
 							<div class="contact_info_location">
-								<div class="contact_info_location_title">Australia Office</div>
+								<div class="contact_info_location_title">Fabrique Paris</div>
 								<ul class="location_list">
-									<li>Forrest Ray, 191-103 Integer Rd, Corona Australia</li>
-									<li>1-234-567-89011</li>
-									<li>info.deercreative@gmail.com</li>
+									<li>https://simplon.co</li>
+									<li>1111111111</li>
+									<li>info.xxxxxxxx@gmail.com</li>
 								</ul>
 							</div>
 						</div>
@@ -148,7 +148,7 @@
 	</div>
 
 	<!-- Footer2-->
-	<?php include("include/footer2.php") ?>
+	<?php include("include/footer2.php"); ?>
 	<!-- Footer2 -->
 
 </div>

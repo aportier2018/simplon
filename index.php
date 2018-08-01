@@ -15,11 +15,11 @@
 <link rel="stylesheet" type="text/css" href="simplon/styles/responsive.css">
 </head>
 <body>
-
+<?php $idpage="index"; ?>
 <div class="super_container">
 
 	<!-- Headeri -->
-	<?php include("simplon/include/headeri.php") ?>
+	<?php include("simplon/include/headeri.php"); ?>
 	<!-- Headeri-->
 
 	<!-- Home -->
@@ -666,7 +666,7 @@
 	</div>
 
 	<!-- Footeri -->
-	<?php include("simplon/include/footeri.php") ?>
+	<?php include("simplon/include/footeri.php"); ?>
 	<!-- Footeri -->
 
 </div>
