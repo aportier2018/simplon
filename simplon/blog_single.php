@@ -30,7 +30,7 @@
 					<div class="col">
 						<div class="breadcrumbs">
 							<ul>
-								<li><a href="../index.php">Home</a></li>
+								<li><a href="../index.php">Accueil</a></li>
 								<li><a href="blog.php">Blog</a></li>
 								<li>Blog Single</li>
 							</ul>

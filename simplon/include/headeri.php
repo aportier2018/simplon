@@ -46,7 +46,7 @@
               <ul class="main_nav">
                 <li <?php if ($idpage == "index"){echo 'class="active"';} ?>><a href="index.php">Accueil</a></li>
                 <li><a href="simplon/about.php">A propos de nous</a></li>
-                <li><a href="simplon/courses.php">Formations</a></li>
+                <li><a href="simplon/courses.php">Formation</a></li>
                 <li><a href="simplon/blog.php">Blog</a></li>
                 <li><a href="simplon/contact.php">Contact</a></li>
               </ul>

@@ -32,9 +32,9 @@
 					<div class="col">
 						<div class="breadcrumbs">
 							<ul>
-								<li><a href="../index.php">Home</a></li>
-								<li><a href="courses.php">Courses</a></li>
-								<li>Course Details</li>
+								<li><a href="../index.php">Accueil</a></li>
+								<li><a href="courses.php">Formation</a></li>
+								<li>Details</li>
 							</ul>
 						</div>
 					</div>

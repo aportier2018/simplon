@@ -28,7 +28,7 @@
 					<div class="col">
 						<div class="breadcrumbs">
 							<ul>
-								<li><a href="../index.php">Home</a></li>
+								<li><a href="../index.php">Accueil</a></li>
 								<li>Contact</li>
 							</ul>
 						</div>

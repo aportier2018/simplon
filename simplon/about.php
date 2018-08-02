@@ -34,8 +34,8 @@
 					<div class="col">
 						<div class="breadcrumbs">
 							<ul>
-								<li><a href="../index.php">Home</a></li>
-								<li>About</li>
+								<li><a href="../index.php">Accueil</a></li>
+								<li>A propos de nous</li>
 							</ul>
 						</div>
 					</div>
