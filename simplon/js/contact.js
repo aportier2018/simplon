@@ -17,7 +17,7 @@ $(document).ready(function()
 {
 	"use strict";
 
-	/* 
+	/*
 
 	1. Vars and Inits
 
@@ -45,7 +45,7 @@ $(document).ready(function()
 	initHeaderSearch();
 	initGoogleMap();
 
-	/* 
+	/*
 
 	2. Set Header
 
@@ -63,7 +63,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	3. Init Menu
 
@@ -115,7 +115,7 @@ $(document).ready(function()
 		menuActive = false;
 	}
 
-	/* 
+	/*
 
 	4. Init Header Search
 
@@ -135,7 +135,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	5. Init Google Map
 
@@ -143,11 +143,11 @@ $(document).ready(function()
 
 	function initGoogleMap()
 	{
-		var myLatlng = new google.maps.LatLng(38.877434, -77.094214);
-    	var mapOptions = 
+		var myLatlng = new google.maps.LatLng(49.7673783, 4.721987500000068);
+    	var mapOptions =
     	{
     		center: myLatlng,
-	       	zoom: 17,
+	       	zoom: 15,
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			draggable: true,
 			scrollwheel: false,
@@ -167,7 +167,7 @@ $(document).ready(function()
 			    "elementType": "geometry",
 			    "stylers": [
 			      {
-			        "color": "#f5f5f5"
+			        "color": "#E9DBDB"
 			      }
 			    ]
 			  },
@@ -183,7 +183,7 @@ $(document).ready(function()
 			    "elementType": "labels.text.fill",
 			    "stylers": [
 			      {
-			        "color": "#717171"
+			        "color": "#7A261D"
 			      }
 			    ]
 			  },
@@ -192,7 +192,7 @@ $(document).ready(function()
 			    "elementType": "labels.text.fill",
 			    "stylers": [
 			      {
-			        "color": "#bdbdbd"
+			        "color": "#46D91A"
 			      }
 			    ]
 			  },
@@ -201,7 +201,7 @@ $(document).ready(function()
 			    "elementType": "geometry",
 			    "stylers": [
 			      {
-			        "color": "#eeeeee"
+			        "color": "#8F8687"
 			      }
 			    ]
 			  },
@@ -228,7 +228,7 @@ $(document).ready(function()
 			    "elementType": "labels.text.fill",
 			    "stylers": [
 			      {
-			        "color": "#9e9e9e"
+			        "color": "#E81D1D"
 			      }
 			    ]
 			  },
@@ -255,7 +255,7 @@ $(document).ready(function()
 			    "elementType": "geometry",
 			    "stylers": [
 			      {
-			        "color": "#dadada"
+			        "color": "#F0E016"
 			      }
 			    ]
 			  },
@@ -264,7 +264,7 @@ $(document).ready(function()
 			    "elementType": "geometry.fill",
 			    "stylers": [
 			      {
-			        "color": "#ffffff"
+			        "color": "yellow"
 			      }
 			    ]
 			  },
@@ -273,7 +273,7 @@ $(document).ready(function()
 			    "elementType": "geometry.stroke",
 			    "stylers": [
 			      {
-			        "visibility": "off"
+			        "visibility": "on"
 			      }
 			    ]
 			  },
@@ -318,7 +318,7 @@ $(document).ready(function()
 			    "elementType": "geometry",
 			    "stylers": [
 			      {
-			        "color": "#c9c9c9"
+			        "color": "#1A96E6"
 			      }
 			    ]
 			  },
@@ -327,7 +327,7 @@ $(document).ready(function()
 			    "elementType": "labels.text.fill",
 			    "stylers": [
 			      {
-			        "color": "#9e9e9e"
+			        "color": "#fff"
 			      }
 			    ]
 			  }
@@ -341,7 +341,7 @@ $(document).ready(function()
             '<div id="siteNotice">'+
             '</div>'+
             '<div id="bodyContent">'+
-            '481-7473 Cum Rd. Yorba Linda South Carolina'+
+            '18a avenue Corneau, 08000 Charleville-Mèzières, France'+
             '</div>'+
             '</div>';
 
@@ -350,10 +350,10 @@ $(document).ready(function()
         });
 
     	// Use an image for a marker
-		var image = 'images/marker.png';
+		var image = 'images/marker-simplon.png';
 		var marker = new google.maps.Marker(
 		{
-			position: new google.maps.LatLng(38.877434, -77.094214),
+			position: new google.maps.LatLng(49.7673783, 4.721987500000068),
 			map: map,
 			icon: image
 		});
@@ -361,7 +361,7 @@ $(document).ready(function()
 		marker.addListener('click', function() {
           infowindow.open(map, marker);
         });
-   
+
 		// Re-center map after window resize
 		google.maps.event.addDomListener(window, 'resize', function()
 		{

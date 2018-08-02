@@ -7,7 +7,7 @@
           <div class="col">
             <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
               <ul class="top_bar_contact_list">
-                <li></i><div class="question"> Apprendre ?</div></li>
+                <li></i><div class="question">Apprendre ?</div></li>
                 <li>
                   <div>Proposer un Projet ?</div>
                 </li>
@@ -44,11 +44,10 @@
             </div>
             <nav class="main_nav_contaner">
               <ul class="main_nav">
-                <li <?php if ($idpage == "index"){echo 'class="active"';} ?>><a href="index.php">Home</a></li>
-                <li><a href="simplon/about.php">About</a></li>
-                <li><a href="simplon/courses.php">Courses</a></li>
+                <li <?php if ($idpage == "index"){echo 'class="active"';} ?>><a href="index.php">Accueil</a></li>
+                <li><a href="simplon/about.php">A propos de nous</a></li>
+                <li><a href="simplon/courses.php">Formations</a></li>
                 <li><a href="simplon/blog.php">Blog</a></li>
-                <li><a href="#">Page</a></li>
                 <li><a href="simplon/contact.php">Contact</a></li>
               </ul>
               <!-- <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
@@ -98,11 +97,10 @@
     </div> -->
     <nav class="menu_nav">
       <ul class="menu_mm">
-        <li class="menu_mm"><a href="#">Home</a></li>
-        <li class="menu_mm"><a href="#">About</a></li>
-        <li class="menu_mm"><a href="#">Courses</a></li>
+        <li class="menu_mm"><a href="#">Accueil</a></li>
+        <li class="menu_mm"><a href="#">A propos de nous</a></li>
+        <li class="menu_mm"><a href="#">Formation</a></li>
         <li class="menu_mm"><a href="#">Blog</a></li>
-        <li class="menu_mm"><a href="#">Page</a></li>
         <li class="menu_mm"><a href="#">Contact</a></li>
       </ul>
     </nav>

@@ -42,18 +42,16 @@
                 <div class="logo_simplon"></div>
               </a>
             </div>
-            <nav class="main_nav_contaner ml-auto">
+            <nav class="main_nav_contaner">
               <ul class="main_nav">
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="../index.php">Accueil</a></li>
                 <li
                 <?php if ($idpage == "about"){echo 'class="active"';}?>>
-                <a href="about.php">About</a></li>
+                <a href="about.php">A propos de nous</a></li>
                 <li <?php //if ($idpage = "courses"){echo 'class="active"';}?>>
-                  <a href="courses.php">Courses</a></li>
+                  <a href="courses.php">Formation</a></li>
                 <li <?php if ($idpage == "blog"){echo 'class="active"';}?>>
                   <a href="blog.php">Blog</a></li>
-                <li <?php if ($idpage == "page"){echo 'class="active"';}?>>
-                  <a href="#">Page</a></li>
                 <li <?php if ($idpage == "contact"){echo 'class="active"';}?>>
                   <a href="contact.php">Contact</a></li>
               </ul>
@@ -113,5 +111,4 @@
       </ul>
     </nav> -->
   </div>
-</header>
 </header>
