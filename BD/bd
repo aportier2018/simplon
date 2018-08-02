@@ -1,0 +1,109 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: theme
+#------------------------------------------------------------
+
+CREATE TABLE theme(
+        id_theme Int  Auto_increment  NOT NULL ,
+        theme    Varchar (50) NOT NULL
+	,CONSTRAINT theme_PK PRIMARY KEY (id_theme)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: article
+#------------------------------------------------------------
+
+CREATE TABLE article(
+        id_art     Int  Auto_increment  NOT NULL ,
+        titre_art  Varchar (50) NOT NULL ,
+        resume_art Varchar (50) NOT NULL ,
+        id_theme   Int NOT NULL
+	,CONSTRAINT article_PK PRIMARY KEY (id_art)
+
+	,CONSTRAINT article_theme_FK FOREIGN KEY (id_theme) REFERENCES theme(id_theme)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: image
+#------------------------------------------------------------
+
+CREATE TABLE image(
+        id_img        Int  Auto_increment  NOT NULL ,
+        titre_img     Varchar (50) NOT NULL ,
+        n_photographe Varchar (10) ,
+        p_photographe Varchar (10)
+	,CONSTRAINT image_PK PRIMARY KEY (id_img)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: auteuredacteur
+#------------------------------------------------------------
+
+CREATE TABLE auteuredacteur(
+        id_auteur Int  Auto_increment  NOT NULL ,
+        n_auteur  Varchar (50) NOT NULL ,
+        p_auteur  Varchar (50) NOT NULL
+	,CONSTRAINT auteuredacteur_PK PRIMARY KEY (id_auteur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: motcle
+#------------------------------------------------------------
+
+CREATE TABLE motcle(
+        id_motcle Int  Auto_increment  NOT NULL ,
+        motcle    Varchar (10) NOT NULL
+	,CONSTRAINT motcle_PK PRIMARY KEY (id_motcle)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: integrer
+#------------------------------------------------------------
+
+CREATE TABLE integrer(
+        id_img Int NOT NULL ,
+        id_art Int NOT NULL
+	,CONSTRAINT integrer_PK PRIMARY KEY (id_img,id_art)
+
+	,CONSTRAINT integrer_image_FK FOREIGN KEY (id_img) REFERENCES image(id_img)
+	,CONSTRAINT integrer_article0_FK FOREIGN KEY (id_art) REFERENCES article(id_art)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: publie
+#------------------------------------------------------------
+
+CREATE TABLE publie(
+        id_art        Int NOT NULL ,
+        id_auteur     Int NOT NULL ,
+        date_publicat Date NOT NULL
+	,CONSTRAINT publie_PK PRIMARY KEY (id_art,id_auteur)
+
+	,CONSTRAINT publie_article_FK FOREIGN KEY (id_art) REFERENCES article(id_art)
+	,CONSTRAINT publie_auteuredacteur0_FK FOREIGN KEY (id_auteur) REFERENCES auteuredacteur(id_auteur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: possede
+#------------------------------------------------------------
+
+CREATE TABLE possede(
+        id_art    Int NOT NULL ,
+        id_motcle Int NOT NULL
+	,CONSTRAINT possede_PK PRIMARY KEY (id_art,id_motcle)
+
+	,CONSTRAINT possede_article_FK FOREIGN KEY (id_art) REFERENCES article(id_art)
+	,CONSTRAINT possede_motcle0_FK FOREIGN KEY (id_motcle) REFERENCES motcle(id_motcle)
+)ENGINE=InnoDB;
+
