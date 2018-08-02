@@ -15,7 +15,7 @@
 
                 <div class="footer_logo_container">
                     <a href="#">
-                      <p class="footer_logo_text">SIMPLON.CO</p>
+                      <!-- <p class="footer_logo_text">SIMPLON.CO</p> -->
                       <div class="footer_logo_simplon"></div>
                     </a>
                   </div>
@@ -57,13 +57,12 @@
                 <div class="footer_title">Le site</div>
                 <div class="footer_links_container">
                   <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="simplon/about.php">About</a></li>
+                    <li><a href="index.php">Accueil</a></li>
+                    <li><a href="simplon/about.php">A propos de nous</a></li>
                     <li><a href="simplon/contact.php">Contact</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="simplon/courses.php">Courses</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="simplon/courses.php">Formation</a></li>
+                    <li><a href="#">Evenements</a></li>
+                    <li><a href="#">Galerie</a></li>
                     <li><a href="#">FAQs</a></li>
                   </ul>
                 </div>

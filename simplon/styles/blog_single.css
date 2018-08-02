@@ -1632,16 +1632,15 @@ height: 100px;
 	margin-top: -14px;
 }
 
-p.footer_logo_text{
+/* p.footer_logo_text{
 	text-align: center;
-}
+} */
 
 .footer_logo_simplon
 {
-	background-image : url("../images/logo-couleur.png");
+	background-image : url("../images/simplon-logo.png");
 	background-size: cover;
-	width : 120px;
-	height: 100px;
+	height: 105px;
 	margin: 0 auto;
 }
 .footer_about_text
