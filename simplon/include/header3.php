@@ -50,6 +50,9 @@
                 <a href="about.php">A propos de nous</a></li>
                 <li <?php if ($idpage == "blog"){echo 'class="active"';}?>>
                   <a href="blog.php">Blog</a></li>
+                  <li
+                  <?php if ($idpage == "article"){echo 'class="active"';}?>>
+                  <a href="article.php">article</a></li>
                 <li <?php if ($idpage == "contact"){echo 'class="active"';}?>>
                   <a href="contact.php">Contact</a></li>
               </ul>

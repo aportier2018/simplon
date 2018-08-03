@@ -1,3 +1,7 @@
+<?php
+include("include/connectbddlocal.php")//include("connectbdd.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +21,7 @@
 	<div class="super_container">
 
 		<!-- Header2 -->
-		<?php include("include/header2.php") ?>
+		<?php include("include/header3.php") ?>
 		<!-- Header2-->
 
 
@@ -31,8 +35,7 @@
 						<div class="breadcrumbs">
 							<ul>
 								<li><a href="../index.php">Accueil</a></li>
-								<li><a href="blog.php">Blog</a></li>
-								<li>Blog Single</li>
+								<li><a href="article.php">Article</a></li>
 							</ul>
 						</div>
 					</div>
@@ -42,6 +45,18 @@
 	</div>
 
 	<!-- Blog -->
+	 	<?php
+        $idarticle =$_GET["id"];
+
+        $detail = 'SELECT * FROM article WHERE id_art="'.$idarticle.'"';
+        $reponse = $dbh->prepare($detail);
+        // Execution de la requête
+        $reponse->execute();
+
+        // On affiche chaque entrée une à une
+        $row = $reponse->fetch(PDO::FETCH_ASSOC);
+
+      ?>
 
 	<div class="blog">
 		<div class="container">
@@ -50,31 +65,49 @@
 				<!-- Blog Content -->
 				<div class="col-lg-8">
 					<div class="blog_content">
-						<div class="blog_title">‘I Kept Thinking of Antioch’: Long Before #MeToo, a times Video Journalist Remembered</div>
-						<div class="blog_meta">
+						<div class="blog_title"><?php echo $row['titre_art'];?> </div>
+						<div class="blog_post_meta">
+										<?php
+
+									// Requête SQL qui va retourner toutes les entrées de la table "auteuredeacteur"
+									$reqaut = 'SELECT * FROM auteuredacteur NATURAL JOIN publie NATURAL JOIN article';
+									$auteur = $dbh->query($reqaut);
+									//requête pour retourner les dates de publication en lien avec auteur
+									$reqdate = 'SELECT date_publicat FROM publie NATURAL JOIN article';
+									$datep = $dbh->query($reqdate);
+									$publication = $datep->fetch(PDO::FETCH_ASSOC);
+
+									$source ='SELECT id_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
+									$image = $dbh->query($source);
+									$images = $image->fetch(PDO::FETCH_ASSOC);
+									// Execution de la requête
+									//$reponse->execute();
+									// On affiche chaque entrée une à une
+
+
+									// On affiche chaque entrée une à une
+									while ($auteurs = $auteur->fetch(PDO::FETCH_ASSOC))
+									{
+									?>
 							<ul>
-								<li>Post on <a href="#">May 5, 2018</a></li>
-								<li>By <a href="#">admin</a></li>
+								<li>écrit par <?php echo $auteurs['n_auteur']." ".$auteurs['p_auteur'];?></li>
+									<?php $date = $datep->fetch(PDO::FETCH_ASSOC);?>
+								<li>posté le <?php echo date("d/m/Y", strtotime($date['date_publicat'])); ?></a>
 							</ul>
 						</div>
-						<div class="blog_image"><img src="images/blog_single.jpg" alt=""></div>
-						<p>Times Insider delivers behind-the-scenes insights into how news, features and opinion come together at The New York Times.Before I could spend the night in my younger sister’s dorm room at Antioch College in Yellow Springs, Ohio — before I could read the spines of her textbooks or drink a disgusting but lovingly prepared vodka/sparkling wine/Red Bull — I had to report to security:</p>
-						<div class="blog_quote d-flex flex-row align-items-center justify-content-start">
-							<i class="fa fa-quote-left" aria-hidden="true"></i>
-							<div>“All sexual interactions at Antioch College must be consensual. Consent means verbally asking and verbally giving or denying consent.”</div>
+
 						</div>
-						<p>It was 2004, a decade before the phrase “affirmative consent” made it onto news shows or big university campuses. I was 21, a junior at another college. I think it was the first time I had heard people talk about consent as something you could ask for verbally. It was definitely the first time I’d ever seen it written out like that.</p>
-						<p>The first-of-its-kind affirmative consent policy was written by students in 1990 as a response to campus rape. But the first thing anyone who was at Antioch in the ’90s wanted to talk to me about was the media mayhem. When The Associated Press ran an article on the policy with the headline “No huggy, no kissy without a ‘yes’ at Antioch College,” it ignited a cultural firestorm.</p>
-						<div class="blog_subtitle">All the current students</div>
-						<p>I followed up with for the video told me that being sexual with an Antioch student is different from being sexual with someone else. They spoke of a common language everyone is taught beginning at orientation, so that when one student starts asking questions of another student in the midst of sexual activity, it doesn’t seem so out there.</p>
+						<div class="blog_image"><img  alt="<?php echo $images['titre_img']; ?>" src="<?php echo $images['source']; ?>" class="resize" /></div>
+						<?php
+						}
+						$articles->closeCursor(); // Termine le traitement de la requête
+						?>
 						<div class="blog_images">
 							<div class="row">
 								<div class="col-lg-6 blog_images_col"><div class="blog_image_small"><img src="images/blog_images_1.jpg" alt=""></div></div>
 								<div class="col-lg-6 blog_images_col"><div class="blog_image_small"><img src="images/blog_images_2.jpg" alt=""></div></div>
 							</div>
-						</div>
-						<p>But what is it like to be an 18-year-old and have the expectation set that you will talk during sex? I, for one, have never been part of a community with that expectation. Spending time at Antioch’s orientation, I thought about how that might change your sexual interactions for the rest of your life.</p>
-					</div>
+
 					<div class="blog_extra d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 						<div class="blog_tags">
 							<span>Tags: </span>
@@ -86,6 +119,8 @@
 								<li><a href="#">Religion</a>, </li>
 							</ul>
 						</div>
+
+
 						<div class="blog_social ml-lg-auto">
 							<span>Share: </span>
 							<ul>
@@ -98,7 +133,7 @@
 						</div>
 					</div>
 					<!-- Comments -->
-					<div class="comments_container">
+					<!-- <div class="comments_container">
 						<div class="comments_title"><span>30</span> Comments</div>
 						<ul class="comments_list">
 							<li>
@@ -160,7 +195,9 @@
 									</div>
 								</div>
 							</li>
-						</ul>
+						</ul> -->
+
+
 						<div class="add_comment_container">
 							<div class="add_comment_title">Write a comment</div>
 							<div class="add_comment_text">Your email address will not be published. Required fields are marked *</div>
@@ -193,11 +230,11 @@
 				</div>
 
 				<!-- Blog Sidebar -->
-				<div class="col-lg-4">
-					<div class="sidebar">
+				<!-- <div class="col-lg-4">
+					<div class="sidebar"> -->
 
 						<!-- Categories -->
-						<div class="sidebar_section">
+						<!-- <div class="sidebar_section">
 							<div class="sidebar_section_title">Categories</div>
 							<div class="sidebar_categories">
 								<ul class="categories_list">
@@ -208,33 +245,33 @@
 									<li><a href="#" class="clearfix">Programming<span>(18)</span></a></li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Latest News -->
-						<div class="sidebar_section">
+						<!-- <div class="sidebar_section">
 							<div class="sidebar_section_title">Latest Courses</div>
 							<div class="sidebar_latest">
 
-								<!-- Latest Course -->
-								<div class="latest d-flex flex-row align-items-start justify-content-start">
+								<!- Latest Course -->
+								<!-- <div class="latest d-flex flex-row align-items-start justify-content-start">
 									<div class="latest_image"><div><img src="images/latest_1.jpg" alt=""></div></div>
 									<div class="latest_content">
 										<div class="latest_title"><a href="course.html">How to Design a Logo a Beginners Course</a></div>
 										<div class="latest_date">november 11, 2017</div>
 									</div>
-								</div>
+								</div> -->
 
 								<!-- Latest Course -->
-								<div class="latest d-flex flex-row align-items-start justify-content-start">
+								<!-- <div class="latest d-flex flex-row align-items-start justify-content-start">
 									<div class="latest_image"><div><img src="images/latest_2.jpg" alt=""></div></div>
 									<div class="latest_content">
 										<div class="latest_title"><a href="course.html">Photography for Beginners Masterclass</a></div>
 										<div class="latest_date">november 11, 2017</div>
 									</div>
-								</div>
+								</div> -->
 
 								<!-- Latest Course -->
-								<div class="latest d-flex flex-row align-items-start justify-content-start">
+								<!-- <div class="latest d-flex flex-row align-items-start justify-content-start">
 									<div class="latest_image"><div><img src="images/latest_3.jpg" alt=""></div></div>
 									<div class="latest_content">
 										<div class="latest_title"><a href="course.html">The Secrets of Body Language</a></div>
@@ -245,7 +282,7 @@
 							</div>
 						</div>
 
-						<!-- Gallery -->
+						<! Gallery
 						<div class="sidebar_section">
 							<div class="sidebar_section_title">Instagram</div>
 							<div class="sidebar_gallery">
@@ -288,7 +325,7 @@
 									</li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Tags -->
 						<div class="sidebar_section">
@@ -325,20 +362,20 @@
 
 	<!-- Newsletter -->
 
-	<div class="newsletter">
+	<!-- <div class="newsletter">
 		<div class="newsletter_background" style="background-image:url(images/newsletter_background.jpg)"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
 
-						<!-- Newsletter Content -->
+						 Newsletter Content
 						<div class="newsletter_content text-lg-left text-center">
 							<div class="newsletter_title">sign up for news and offers</div>
 							<div class="newsletter_subtitle">Subcribe to lastest smartphones news & great deals we offer</div>
 						</div>
 
-						<!-- Newsletter Form -->
+						<! Newsletter Form
 						<div class="newsletter_form_container ml-lg-auto">
 							<form action="#" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
 								<input type="email" class="newsletter_input" placeholder="Your Email" required="required">
@@ -350,7 +387,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Footer2-->
 	<?php include("include/footer2.php") ?>

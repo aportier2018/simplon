@@ -1,3 +1,7 @@
+<?php
+include("include/connectbddlocal.php")//include("connectbdd.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,132 +53,73 @@
 
 						<!-- Blog Post -->
 						<div class="blog_post trans_200">
-							<div class="blog_post_image"><img src="images/blog_1.jpg" alt=""></div>
-							<div class="blog_post_body">
-								<div class="blog_post_title"><a href="blog_single.html">Here’s What You Need to Know About Online Testing</a></div>
-								<div class="blog_post_meta">
-									<ul>
-										<li><a href="#">admin</a></li>
-										<li><a href="#">november 11, 2017</a></li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take...</p>
-								</div>
-							</div>
-						</div>
+							<?php
 
-						<!-- Blog Post -->
-						<div class="blog_post trans_200">
-							<div class="blog_post_body">
-								<div class="blog_post_title"><a href="blog_single.html">With Changing Students and Times</a></div>
-								<div class="blog_post_meta">
-									<ul>
-										<li><a href="#">admin</a></li>
-										<li><a href="#">november 11, 2017</a></li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take...</p>
-								</div>
-							</div>
-						</div>
+						// Requête SQL qui va retourner toutes les entrées de la table "article"
+						$article = 'SELECT * FROM article';
+						$articles = $dbh->query($article);
 
-						<!-- Blog Post -->
-						<div class="blog_post trans_200">
-							<div class="blog_post_video_container">
-								<video class="blog_post_video video-js" data-setup='{"controls": true, "autoplay": false, "preload": "auto", "poster": "images/blog_2.jpg"}'>
-									<source src="images/mov_bbb.mp4" type="video/mp4">
-									<source src="images/mov_bbb.ogg" type="video/ogg">
-									Your browser does not support HTML5 video.
-								</video>
-							</div>
-							<div class="blog_post_body">
-								<div class="blog_post_title"><a href="blog_single.html">Building Skills Outside the Classroom With New Ways</a></div>
-								<div class="blog_post_meta">
-									<ul>
-										<li><a href="#">admin</a></li>
-										<li><a href="#">november 11, 2017</a></li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take...</p>
-								</div>
-							</div>
-						</div>
+						$source ='SELECT id_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
+						$image = $dbh->query($source);
+						$images = $image->fetch(PDO::FETCH_ASSOC);
+						// Execution de la requête
+						//$reponse->execute();
+						// On affiche chaque entrée une à une
+						while ($row = $articles->fetch(PDO::FETCH_ASSOC))
+						{
+						?>
 
-						<!-- Blog Post -->
-						<div class="blog_post trans_200">
-							<div class="blog_post_image"><img src="images/blog_3.jpg" alt=""></div>
-							<div class="blog_post_body">
-								<div class="blog_post_title"><a href="blog_single.html">Law Schools Debate a Contentious Testing Alternative</a></div>
-								<div class="blog_post_meta">
-									<ul>
-										<li><a href="#">admin</a></li>
-										<li><a href="#">november 11, 2017</a></li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take...</p>
-								</div>
-							</div>
-						</div>
+							<div class="blog_post_image">
+								<a href="article.php?id=<?php echo $row['id_article']; ?>"><img  alt="<?php echo $images['titre_img']; ?>" src="<?php echo $images['source']; ?>" class="resize" />
+	            </a>
 
-						<!-- Blog Post -->
-						<div class="blog_post trans_200">
-							<div class="blog_post_video_container">
-								<video class="blog_post_video video-js" data-setup='{"controls": true, "autoplay": false, "preload": "auto", "poster": "images/blog_4.jpg"}'>
-									<source src="images/mov_bbb.mp4" type="video/mp4">
-									<source src="images/mov_bbb.ogg" type="video/ogg">
-									Your browser does not support HTML5 video.
-								</video>
 							</div>
 							<div class="blog_post_body">
-								<div class="blog_post_title"><a href="blog_single.html">Building Skills Outside the Classroom With New Ways</a></div>
-								<div class="blog_post_meta">
-									<ul>
-										<li><a href="#">admin</a></li>
-										<li><a href="#">november 11, 2017</a></li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take...</p>
-								</div>
-							</div>
-						</div>
+								<div class="blog_post_title"><?php echo $row['titre_art'];?> <!--***récupere de titre -->
 
-						<!-- Blog Post -->
-						<div class="blog_post trans_200">
-							<div class="blog_post_image"><img src="images/blog_5.jpg" alt=""></div>
-							<div class="blog_post_body">
-								<div class="blog_post_title"><a href="blog_single.html">Here’s What You Need to Know About Online Testing</a></div>
-								<div class="blog_post_meta">
-									<ul>
-										<li><a href="#">admin</a></li>
-										<li><a href="#">november 11, 2017</a></li>
-									</ul>
-								</div>
-								<div class="blog_post_text">
-									<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take...</p>
-								</div>
-							</div>
-						</div>
+									<!-- <a href="blog_single.html"><?php //echo $row['resume_art']; ?></a></div> -->
 
-						<!-- Blog Post -->
-						<div class="blog_post trans_200">
-							<div class="blog_post_body">
-								<div class="blog_post_title"><a href="blog_single.html">With Changing Students and Times</a></div>
+									<div class="blog_post_text">
+										<p><?php echo $row['resume_art']; ?></a></p>
+									</div>
+									<!--***récupere de resumé -->
+									<?php
+									}
+									$articles->closeCursor(); // Termine le traitement de la requête
+									?>
+
 								<div class="blog_post_meta">
+									<?php
+
+								// Requête SQL qui va retourner toutes les entrées de la table "auteuredeacteur"
+								$reqaut = 'SELECT * FROM auteuredacteur NATURAL JOIN publie NATURAL JOIN article';
+								$auteur = $dbh->query($reqaut);
+								//requête pour retourner les dates de publication en lien avec auteur
+								$reqdate = 'SELECT date_publicat FROM publie NATURAL JOIN article';
+								$datep = $dbh->query($reqdate);
+
+								// Execution de la requête
+								//$reponse->execute();
+
+								// On affiche chaque entrée une à une
+								while ($auteurs = $auteur->fetch(PDO::FETCH_ASSOC))
+								{
+								?>
 									<ul>
-										<li><a href="#">admin</a></li>
-										<li><a href="#">november 11, 2017</a></li>
+										<li><a href="#"><?php echo $auteurs['n_auteur']." ".$auteurs['p_auteur'];?></a></li>
+										<?php $date = $datep->fetch(PDO::FETCH_ASSOC);?>
+										<li><a href="#"><?php echo date("d/m/Y", strtotime($date['date_publicat'])); ?></a></li>
+
 									</ul>
 								</div>
-								<div class="blog_post_text">
-									<p>Policy analysts generally agree on a need for reform, but not on which path policymakers should take...</p>
-								</div>
+
 							</div>
-						</div>
+
+               <?php
+               }
+               $articles->closeCursor(); // Termine le traitement de la requête
+               ?>
+
 
 					</div>
 				</div>
@@ -189,32 +134,32 @@
 
 	<!-- Newsletter -->
 
-	<div class="newsletter">
+	<!-- <div class="newsletter">
 		<div class="newsletter_background" style="background-image:url(images/newsletter_background.jpg)"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
 
-						<!-- Newsletter Content -->
-						<div class="newsletter_content text-lg-left text-center">
+						<! Newsletter Content -->
+						<!-- <div class="newsletter_content text-lg-left text-center">
 							<div class="newsletter_title">sign up for news and offers</div>
 							<div class="newsletter_subtitle">Subcribe to lastest smartphones news & great deals we offer</div>
-						</div>
+						</div> -->
 
 						<!-- Newsletter Form -->
-						<div class="newsletter_form_container ml-lg-auto">
+						<!-- <div class="newsletter_form_container ml-lg-auto">
 							<form action="#" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
 								<input type="email" class="newsletter_input" placeholder="Your Email" required="required">
 								<button type="submit" class="newsletter_button">subscribe</button>
 							</form>
-						</div>
+						</div> -->
 
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- Footer2-->
 	<?php include("include/footer2.php"); ?>
