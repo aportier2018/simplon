@@ -21,9 +21,7 @@
                   <div>Nos Projets et Cours</div>
                 </li>
               </ul>
-              <!-- <div class="top_bar_login ml-auto">
-                <div class="login_button"><a href="#">Register or Login</a></div>
-              </div> -->
+
             </div>
           </div>
         </div>
@@ -47,8 +45,9 @@
                 <li <?php if ($idpage == "index"){echo 'class="active"';} ?>><a href="index.php">Accueil</a></li>
                 <li><a href="simplon/about.php">A propos de nous</a></li>
                 <li><a href="simplon/blog.php">Blog</a></li>
-                <li><a href="simplon/article.php">Article</a></li>             
+                <li><a href="simplon/article.php">Article</a></li>
                 <li><a href="simplon/contact.php">Contact</a></li>
+                <li><a href="simplon/f_insererart.php">Ajouter un article</a></li>
               </ul>
               <!-- <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 

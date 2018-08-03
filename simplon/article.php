@@ -17,7 +17,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 	<link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
 </head>
 <body>
-<?php $idpage="accueil"; ?>
+<?php $idpage="article"; ?>
 	<div class="super_container">
 
 		<!-- Header2 -->
@@ -142,7 +142,8 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 	}
 	$auteur->closeCursor(); // Termine le traitement de la requête
 	?>
-						<!-- <div class="blog_social ml-lg-auto">
+				</div>
+						<div class="blog_social ml-lg-auto">
 							<span>Share: </span>
 							<ul>
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -152,7 +153,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 								<li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-					</div> -->
+
 
 						<!-- <div class="add_comment_container">
 							<div class="add_comment_title">Write a comment</div>

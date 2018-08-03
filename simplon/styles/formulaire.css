@@ -1,0 +1,48 @@
+html {
+    width: 100%;
+    min-height: 100%;
+    background: #fff;
+    font: 400 62.5% 'Open Sans', Arial, Helvetica, sans-serif;
+    color: #575656;
+}
+
+body {
+    position: relative;
+    height: 100%;
+  }
+
+
+  /******************************************
+  *                FORMULAIRE               *
+  *                                         *
+  ******************************************/
+
+  input,
+  textarea,
+  select {
+      width: 305px;
+      height: 30px;
+      padding: 0 5px;
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+      color: #575656;
+      background: #fff;
+      border: 1px solid #6288ad;
+  }
+
+    /******************************************
+    * FORMULAIRE inscription utilisateur      *
+    *                                         *
+    ******************************************/
+
+
+
+  /******************************************
+  *       Media querie pour responsive:     *
+  *                                         *
+  ******************************************/
+  @media all and (max-width:780px) {
+  	html {
+  		font-size: 50%;
+  	}
+  }
