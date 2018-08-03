@@ -70,10 +70,10 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 						?>
 
 							<div class="blog_post_image">
-								<a href="article.php?id=<?php echo $row['id_article']; ?>"><img  alt="<?php echo $images['titre_img']; ?>" src="<?php echo $images['source']; ?>" class="resize" />
+								<a href="article.php?id=<?php echo $row['id_art']; ?>"><img  alt="<?php echo $images['titre_img']; ?>" src="<?php echo $images['source']; ?>" class="resize" />
 	            </a>
-
 							</div>
+
 							<div class="blog_post_body">
 								<div class="blog_post_title"><?php echo $row['titre_art'];?> <!--***récupere de titre -->
 
@@ -84,7 +84,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 									</div>
 									<!--***récupere de resumé -->
 									<?php
-									}
+							}
 									$articles->closeCursor(); // Termine le traitement de la requête
 									?>
 
@@ -117,7 +117,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 
                <?php
                }
-               $articles->closeCursor(); // Termine le traitement de la requête
+               $auteur->closeCursor(); // Termine le traitement de la requête
                ?>
 
 

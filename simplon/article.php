@@ -5,7 +5,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Blog Single</title>
+	<title>Article</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Unicat project">
@@ -17,14 +17,57 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 	<link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
 </head>
 <body>
-
+<?php $idpage="accueil"; ?>
 	<div class="super_container">
 
 		<!-- Header2 -->
-		<?php include("include/header3.php") ?>
+		<?php include("include/header2.php") ?>
 		<!-- Header2-->
+		<?php
+		$idarticle =$_GET["id"];
+
+		// $detail = 'SELECT * FROM article WHERE id_art="'.$idarticle.'"';
+		// $reponse = $dbh->query($detail);
+		// // // Execution de la requête
+		// // $reponse->execute();
+		// $row = $reponse->fetch(PDO::FETCH_ASSOC);
+
+		// $detail = 'SELECT * FROM article WHERE id_art="'.$idarticle.'"';
+		// $reponse = $dbh->prepare($detail);
+		// // Execution de la requête
+		// $reponse->execute();
+		//
+		// // On affiche chaque entrée une à une
+		// $row = $reponse->fetch(PDO::FETCH_ASSOC);
+
+		// Requête SQL qui va retourner toutes les entrées de la table "auteuredeacteur"
+		$reqaut = 'SELECT * FROM auteuredacteur NATURAL JOIN publie NATURAL JOIN article WHERE id_art="'.$idarticle.'"';
+		$auteur = $dbh->query($reqaut);
+
+		//requête pour recupérer les dates de publication en lien avec auteur
+		$reqdate = 'SELECT date_publicat FROM publie NATURAL JOIN article';
+		$datep = $dbh->query($reqdate);
+		$publication = $datep->fetch(PDO::FETCH_ASSOC);
+
+		//requête pour récupérer l'image
+		$source ='SELECT id_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
+		$image = $dbh->query($source);
+		$images = $image->fetch(PDO::FETCH_ASSOC);
+
+		//req pour récupérer  le texte
+		$reqtexte = 'SELECT texte FROM article';
+		$texte= $dbh->query($reqtexte);
+		$textes = $texte->fetch(PDO::FETCH_ASSOC);
+
+		$reqtitre = 'SELECT titre_art FROM article';
+		$titre= $dbh->query($reqtitre);
+		$titres = $titre->fetch(PDO::FETCH_ASSOC);
 
 
+		// On affiche chaque entrée une à une
+		while ($auteurs = $auteur->fetch(PDO::FETCH_ASSOC))
+		{
+		?>
 	<!-- Home -->
 
 	<div class="home">
@@ -36,6 +79,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 							<ul>
 								<li><a href="../index.php">Accueil</a></li>
 								<li><a href="article.php">Article</a></li>
+								<li><?php echo $titres['titre_art'];?></li>
 							</ul>
 						</div>
 					</div>
@@ -44,19 +88,9 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 		</div>
 	</div>
 
-	<!-- Blog -->
-	 	<?php
-        $idarticle =$_GET["id"];
+	<!-- <article >
 
-        $detail = 'SELECT * FROM article WHERE id_art="'.$idarticle.'"';
-        $reponse = $dbh->prepare($detail);
-        // Execution de la requête
-        $reponse->execute();
-
-        // On affiche chaque entrée une à une
-        $row = $reponse->fetch(PDO::FETCH_ASSOC);
-
-      ?>
+	</article>-->
 
 	<div class="blog">
 		<div class="container">
@@ -65,63 +99,50 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 				<!-- Blog Content -->
 				<div class="col-lg-8">
 					<div class="blog_content">
-						<div class="blog_title"><?php echo $row['titre_art'];?> </div>
+						<div class="blog_title"><?php echo $titres['titre_art'];?></div>
 						<div class="blog_post_meta">
-										<?php
-
-									// Requête SQL qui va retourner toutes les entrées de la table "auteuredeacteur"
-									$reqaut = 'SELECT * FROM auteuredacteur NATURAL JOIN publie NATURAL JOIN article';
-									$auteur = $dbh->query($reqaut);
-									//requête pour retourner les dates de publication en lien avec auteur
-									$reqdate = 'SELECT date_publicat FROM publie NATURAL JOIN article';
-									$datep = $dbh->query($reqdate);
-									$publication = $datep->fetch(PDO::FETCH_ASSOC);
-
-									$source ='SELECT id_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
-									$image = $dbh->query($source);
-									$images = $image->fetch(PDO::FETCH_ASSOC);
-									// Execution de la requête
-									//$reponse->execute();
-									// On affiche chaque entrée une à une
 
 
-									// On affiche chaque entrée une à une
-									while ($auteurs = $auteur->fetch(PDO::FETCH_ASSOC))
-									{
-									?>
+							<div class="blog_post_image">
+							<img  alt="<?php echo $images['titre_img']; ?>" src="<?php echo $images['source']; ?>" class="resize" />
+							</a>
+							</div>
 							<ul>
 								<li>écrit par <?php echo $auteurs['n_auteur']." ".$auteurs['p_auteur'];?></li>
-									<?php $date = $datep->fetch(PDO::FETCH_ASSOC);?>
-								<li>posté le <?php echo date("d/m/Y", strtotime($date['date_publicat'])); ?></a>
+								<li>posté le <?php echo date("d/m/Y", strtotime($publication['date_publicat'])); ?></a>
 							</ul>
 						</div>
 
+						<div class="blog_post_text">
+							<p><?php echo $textes['texte']; ?></a></p>
 						</div>
-						<div class="blog_image"><img  alt="<?php echo $images['titre_img']; ?>" src="<?php echo $images['source']; ?>" class="resize" /></div>
-						<?php
-						}
-						$articles->closeCursor(); // Termine le traitement de la requête
-						?>
-						<div class="blog_images">
-							<div class="row">
-								<div class="col-lg-6 blog_images_col"><div class="blog_image_small"><img src="images/blog_images_1.jpg" alt=""></div></div>
-								<div class="col-lg-6 blog_images_col"><div class="blog_image_small"><img src="images/blog_images_2.jpg" alt=""></div></div>
-							</div>
+
 
 					<div class="blog_extra d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
 						<div class="blog_tags">
-							<span>Tags: </span>
-							<ul>
-								<li><a href="#">Education</a>, </li>
-								<li><a href="#">Math</a>, </li>
-								<li><a href="#">Food</a>, </li>
-								<li><a href="#">Schools</a>, </li>
-								<li><a href="#">Religion</a>, </li>
-							</ul>
+							<span>Mot clé : </span>
+			 <?php
+			 	$idarticle = $_GET["id"];
+				$motcle ='SELECT mc_motcle FROM motcle NATURAL JOIN possede NATURAL JOIN article WHERE id_art="'.$idarticle.'"';
+				$mc = $dbh->query($motcle);
+
+				while($mcs = $mc->fetch(PDO::FETCH_ASSOC))
+				{
+		 		?>
+						<ul>
+							<li> <?php echo $mcs['mc_motcle'];?></li>
+							<li> </li>
+						</ul>
 						</div>
-
-
-						<div class="blog_social ml-lg-auto">
+				<?php
+				}
+				$mc->closeCursor(); // Termine le traitement de la requête
+				?>
+			<?php
+	}
+	$auteur->closeCursor(); // Termine le traitement de la requête
+	?>
+						<!-- <div class="blog_social ml-lg-auto">
 							<span>Share: </span>
 							<ul>
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -131,74 +152,9 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 								<li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-					</div>
-					<!-- Comments -->
-					<!-- <div class="comments_container">
-						<div class="comments_title"><span>30</span> Comments</div>
-						<ul class="comments_list">
-							<li>
-								<div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-									<div class="comment_image"><div><img src="images/comment_1.jpg" alt=""></div></div>
-									<div class="comment_content">
-										<div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-											<div class="comment_author"><a href="#">Jennifer Aniston</a></div>
-											<div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
-											<div class="comment_time ml-auto">October 19,2018</div>
-										</div>
-										<div class="comment_text">
-											<p>There are many variations of passages of Lorem Ipsum available, but the majority have alteration in some form, by injected humour.</p>
-										</div>
-										<div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-											<div class="comment_extra comment_likes"><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span>108</span></a></div>
-											<div class="comment_extra comment_reply"><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>Reply</span></a></div>
-										</div>
-									</div>
-								</div>
-								<ul>
-									<li>
-										<div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-											<div class="comment_image"><div><img src="images/comment_2.jpg" alt=""></div></div>
-											<div class="comment_content">
-												<div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-													<div class="comment_author"><a href="#">John Smith</a></div>
-													<div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
-													<div class="comment_time ml-auto">October 19,2018</div>
-												</div>
-												<div class="comment_text">
-													<p>There are many variations of passages of Lorem Ipsum available, but the majority have alteration in some form, by injected humour.</p>
-												</div>
-												<div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-													<div class="comment_extra comment_likes"><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span>108</span></a></div>
-													<div class="comment_extra comment_reply"><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>Reply</span></a></div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div class="comment_item d-flex flex-row align-items-start jutify-content-start">
-									<div class="comment_image"><div><img src="images/comment_3.jpg" alt=""></div></div>
-									<div class="comment_content">
-										<div class="comment_title_container d-flex flex-row align-items-center justify-content-start">
-											<div class="comment_author"><a href="#">Jane Austen</a></div>
-											<div class="comment_rating"><div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div></div>
-											<div class="comment_time ml-auto">October 19,2018</div>
-										</div>
-										<div class="comment_text">
-											<p>There are many variations of passages of Lorem Ipsum available, but the majority have alteration in some form, by injected humour.</p>
-										</div>
-										<div class="comment_extras d-flex flex-row align-items-center justify-content-start">
-											<div class="comment_extra comment_likes"><a href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span>108</span></a></div>
-											<div class="comment_extra comment_reply"><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>Reply</span></a></div>
-										</div>
-									</div>
-								</div>
-							</li>
-						</ul> -->
+					</div> -->
 
-
-						<div class="add_comment_container">
+						<!-- <div class="add_comment_container">
 							<div class="add_comment_title">Write a comment</div>
 							<div class="add_comment_text">Your email address will not be published. Required fields are marked *</div>
 							<form action="#" class="comment_form">
@@ -227,132 +183,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 							</form>
 						</div>
 					</div>
-				</div>
-
-				<!-- Blog Sidebar -->
-				<!-- <div class="col-lg-4">
-					<div class="sidebar"> -->
-
-						<!-- Categories -->
-						<!-- <div class="sidebar_section">
-							<div class="sidebar_section_title">Categories</div>
-							<div class="sidebar_categories">
-								<ul class="categories_list">
-									<li><a href="#" class="clearfix">Art & Design<span>(25)</span></a></li>
-									<li><a href="#" class="clearfix">Business<span>(10)</span></a></li>
-									<li><a href="#" class="clearfix">IT & Software<span>(22)</span></a></li>
-									<li><a href="#" class="clearfix">Languages<span>(12)</span></a></li>
-									<li><a href="#" class="clearfix">Programming<span>(18)</span></a></li>
-								</ul>
-							</div>
-						</div> -->
-
-						<!-- Latest News -->
-						<!-- <div class="sidebar_section">
-							<div class="sidebar_section_title">Latest Courses</div>
-							<div class="sidebar_latest">
-
-								<!- Latest Course -->
-								<!-- <div class="latest d-flex flex-row align-items-start justify-content-start">
-									<div class="latest_image"><div><img src="images/latest_1.jpg" alt=""></div></div>
-									<div class="latest_content">
-										<div class="latest_title"><a href="course.html">How to Design a Logo a Beginners Course</a></div>
-										<div class="latest_date">november 11, 2017</div>
-									</div>
-								</div> -->
-
-								<!-- Latest Course -->
-								<!-- <div class="latest d-flex flex-row align-items-start justify-content-start">
-									<div class="latest_image"><div><img src="images/latest_2.jpg" alt=""></div></div>
-									<div class="latest_content">
-										<div class="latest_title"><a href="course.html">Photography for Beginners Masterclass</a></div>
-										<div class="latest_date">november 11, 2017</div>
-									</div>
-								</div> -->
-
-								<!-- Latest Course -->
-								<!-- <div class="latest d-flex flex-row align-items-start justify-content-start">
-									<div class="latest_image"><div><img src="images/latest_3.jpg" alt=""></div></div>
-									<div class="latest_content">
-										<div class="latest_title"><a href="course.html">The Secrets of Body Language</a></div>
-										<div class="latest_date">november 11, 2017</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-						<! Gallery
-						<div class="sidebar_section">
-							<div class="sidebar_section_title">Instagram</div>
-							<div class="sidebar_gallery">
-								<ul class="gallery_items d-flex flex-row align-items-start justify-content-between flex-wrap">
-									<li class="gallery_item">
-										<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
-										<a class="colorbox" href="images/gallery_1_large.jpg">
-											<img src="images/gallery_1.jpg" alt="">
-										</a>
-									</li>
-									<li class="gallery_item">
-										<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
-										<a class="colorbox" href="images/gallery_2_large.jpg">
-											<img src="images/gallery_2.jpg" alt="">
-										</a>
-									</li>
-									<li class="gallery_item">
-										<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
-										<a class="colorbox" href="images/gallery_3_large.jpg">
-											<img src="images/gallery_3.jpg" alt="">
-										</a>
-									</li>
-									<li class="gallery_item">
-										<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
-										<a class="colorbox" href="images/gallery_4_large.jpg">
-											<img src="images/gallery_4.jpg" alt="">
-										</a>
-									</li>
-									<li class="gallery_item">
-										<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
-										<a class="colorbox" href="images/gallery_5_large.jpg">
-											<img src="images/gallery_5.jpg" alt="">
-										</a>
-									</li>
-									<li class="gallery_item">
-										<div class="gallery_item_overlay d-flex flex-column align-items-center justify-content-center">+</div>
-										<a class="colorbox" href="images/gallery_6_large.jpg">
-											<img src="images/gallery_6.jpg" alt="">
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div> -->
-
-						<!-- Tags -->
-						<div class="sidebar_section">
-							<div class="sidebar_section_title">Tags</div>
-							<div class="sidebar_tags">
-								<ul class="tags_list">
-									<li><a href="#">creative</a></li>
-									<li><a href="#">unique</a></li>
-									<li><a href="#">photography</a></li>
-									<li><a href="#">ideas</a></li>
-									<li><a href="#">wordpress</a></li>
-									<li><a href="#">startup</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Banner -->
-						<div class="sidebar_section">
-							<div class="sidebar_banner d-flex flex-column align-items-center justify-content-center text-center">
-								<div class="sidebar_banner_background" style="background-image:url(images/banner_1.jpg)"></div>
-								<div class="sidebar_banner_overlay"></div>
-								<div class="sidebar_banner_content">
-									<div class="banner_title">Free Book</div>
-									<div class="banner_button"><a href="#">download now</a></div>
-								</div>
-							</div>
-						</div>
+				</div> -->
 
 					</div>
 				</div>
@@ -360,34 +191,6 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 		</div>
 	</div>
 
-	<!-- Newsletter -->
-
-	<!-- <div class="newsletter">
-		<div class="newsletter_background" style="background-image:url(images/newsletter_background.jpg)"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
-
-						 Newsletter Content
-						<div class="newsletter_content text-lg-left text-center">
-							<div class="newsletter_title">sign up for news and offers</div>
-							<div class="newsletter_subtitle">Subcribe to lastest smartphones news & great deals we offer</div>
-						</div>
-
-						<! Newsletter Form
-						<div class="newsletter_form_container ml-lg-auto">
-							<form action="#" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
-								<input type="email" class="newsletter_input" placeholder="Your Email" required="required">
-								<button type="submit" class="newsletter_button">subscribe</button>
-							</form>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 
 	<!-- Footer2-->
 	<?php include("include/footer2.php") ?>

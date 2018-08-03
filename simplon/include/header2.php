@@ -44,12 +44,18 @@
             </div>
             <nav class="main_nav_contaner">
               <ul class="main_nav">
-                <li><a href="../index.php">Accueil</a></li>
-                <li
-                <?php if ($idpage == "about"){echo 'class="active"';}?>>
+                  <li <?php if ($idpage == "index.php"){echo 'class="active"';} ?>>
+                    <a href="../index.php">Accueil</a></li>
+
+                <li <?php if ($idpage == "about"){echo 'class="active"';}?>>
                 <a href="about.php">A propos de nous</a></li>
+
                 <li <?php if ($idpage == "blog"){echo 'class="active"';}?>>
                   <a href="blog.php">Blog</a></li>
+
+                  <li <?php if ($idpage == "article"){echo 'class="active"';}?>>
+                    <a href="article.php">Article</a></li>
+
                 <li <?php if ($idpage == "contact"){echo 'class="active"';}?>>
                   <a href="contact.php">Contact</a></li>
               </ul>

@@ -47,7 +47,7 @@
                 <li <?php if ($idpage == "index"){echo 'class="active"';} ?>><a href="index.php">Accueil</a></li>
                 <li><a href="simplon/about.php">A propos de nous</a></li>
                 <li><a href="simplon/blog.php">Blog</a></li>
-                <!-- <li><a href="simplon/article.php">Article</a></li>             -->
+                <li><a href="simplon/article.php">Article</a></li>             
                 <li><a href="simplon/contact.php">Contact</a></li>
               </ul>
               <!-- <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
