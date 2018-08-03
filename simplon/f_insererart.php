@@ -74,7 +74,6 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 
                    <label for="texte">texte : </label>
                    <input type="text" name="texte" id="texte" ><br>
-                
 
                    <label for="affiche">Affiche: </label>
                    <input type="text" name="affiche" id="affiche"><br>
