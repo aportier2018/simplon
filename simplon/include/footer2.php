@@ -59,11 +59,9 @@
                   <ul>
                     <li><a href="../index.php">Accueil</a></li>
                     <li><a href="about.php">A propos de nous</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="article">Article</a></li>
                     <li><a href="contact.php">Contact</a></li>
-                    <li><a href="courses.php">Formation</a></li>
-                    <li><a href="#">Evenements</a></li>
-                    <li><a href="#">Galerie</a></li>
-                    <li><a href="#">FAQs</a></li>
                   </ul>
                 </div>
               </div>

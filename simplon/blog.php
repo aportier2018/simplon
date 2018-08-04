@@ -59,7 +59,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 						$article = 'SELECT * FROM article';
 						$articles = $dbh->query($article);
 
-						$source ='SELECT id_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
+						$source ='SELECT id_img, titre_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
 						$image = $dbh->query($source);
 						$images = $image->fetch(PDO::FETCH_ASSOC);
 						// Execution de la requête

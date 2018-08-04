@@ -441,7 +441,7 @@ height: 100px;
 	left: 0;
 	width: 100%;
 	height: 2px;
-	/* background: #14bdee; */
+	/* background: #e80041; */
 	content: '';
 }
 .search_button
@@ -468,7 +468,7 @@ height: 100px;
 .search_button:hover i,
 .shopping_cart:hover i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .header_search_form
 {
@@ -482,7 +482,7 @@ height: 100px;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-	background: #14bdee;
+	background: #e80041;
 	z-index: -1;
 	opacity: 0;
 	-webkit-transition: all 400ms ease;
@@ -546,7 +546,7 @@ height: 100px;
 }
 .hamburger:hover i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 
@@ -645,7 +645,7 @@ height: 100px;
 }
 .menu_nav ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .menu .search
 {
@@ -791,7 +791,7 @@ height: 100px;
 }
 .breadcrumbs ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 /*********************************
@@ -862,7 +862,7 @@ height: 100px;
 }
 .course_info_text a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .rating_r
 {
@@ -875,7 +875,7 @@ height: 100px;
 	font-style: normal;
 	font-size: 14px;
 	margin-right: 4px;
-	color: #14bdee;
+	color: #e80041;
 }
 .rating_r_1 i:first-child::before{content: "\f005";}
 .rating_r_2 i:first-child::before{content: "\f005";}
@@ -929,7 +929,7 @@ height: 100px;
 .tab.active,
 .tab:hover
 {
-	background: #14bdee;
+	background: #e80041;
 	color: #FFFFFF;
 }
 .tab_panels
@@ -1260,7 +1260,7 @@ height: 100px;
 .review_rating_bar > div
 {
 	height: 100%;
-	background: #14bdee;
+	background: #e80041;
 }
 .comments_container
 {
@@ -1309,7 +1309,7 @@ height: 100px;
 }
 .comment_author a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .comments_container .rating_r
 {
@@ -1345,7 +1345,7 @@ height: 100px;
 }
 .comment_extra a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .comment_extra a span
 {
@@ -1353,7 +1353,7 @@ height: 100px;
 }
 .comment_reply a i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .comments_list li ul
 {
@@ -1376,7 +1376,7 @@ height: 100px;
 }
 .add_comment_text a
 {
-	color: #14bdee;
+	color: #e80041;
 	text-decoration: underline;
 }
 
@@ -1411,7 +1411,7 @@ height: 100px;
 	font-family: 'Roboto Slab', serif;
 	font-size: 24px;
 	font-weight: 400;
-	color: #14bdee;
+	color: #e80041;
 }
 .feature_list
 {
@@ -1436,7 +1436,7 @@ height: 100px;
 	transform: translateY(-50%);
 	left: 0;
 	font-size: 18px;
-	color: #14bdee;
+	color: #e80041;
 }
 .sidebar_teacher
 {
@@ -1475,7 +1475,7 @@ height: 100px;
 }
 .teacher_name a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .teacher_meta_container
 {
@@ -1498,7 +1498,7 @@ height: 100px;
 }
 .teacher_meta_text i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .teacher_info
 {
@@ -1547,14 +1547,14 @@ height: 100px;
 }
 .latest_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .latest_price
 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 14px;
 	font-weight: 700;
-	color: #14bdee;
+	color: #e80041;
 	line-height: 0.75;
 	margin-top: 16px;
 }
@@ -1662,7 +1662,7 @@ height: 100px;
 	cursor: pointer;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #14bdee;
+	color: #e80041;
 	font-weight: 500;
 	letter-spacing: 0.1em;
 }
@@ -1713,7 +1713,7 @@ height: 100px;
 }
 .footer_logo_text span
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .footer_title
 {

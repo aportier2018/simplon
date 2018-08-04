@@ -441,7 +441,7 @@ height: 100px;
 	left: 0;
 	width: 100%;
 	height: 2px;
-	/* background: #14bdee; */
+	/* background: #e80041; */
 	content: '';
 }
 .search_button
@@ -468,7 +468,7 @@ height: 100px;
 .search_button:hover i,
 .shopping_cart:hover i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .header_search_form
 {
@@ -482,7 +482,7 @@ height: 100px;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-	background: #14bdee;
+	background: #e80041;
 	z-index: -1;
 	opacity: 0;
 	-webkit-transition: all 400ms ease;
@@ -546,7 +546,7 @@ height: 100px;
 }
 .hamburger:hover i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 /*********************************
@@ -644,7 +644,7 @@ height: 100px;
 }
 .menu_nav ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .menu .search
 {
@@ -790,7 +790,7 @@ height: 100px;
 }
 .breadcrumbs ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 /*********************************
@@ -870,7 +870,7 @@ height: 100px;
 }
 .blog_post_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .blog_post_meta
 {
@@ -903,7 +903,7 @@ height: 100px;
 }
 .blog_post_meta ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .blog_post_text
 {
@@ -921,7 +921,7 @@ height: 100px;
 	width: 150px;
 	height: 46px;
 	border-radius: 3px;
-	background: #14bdee;
+	background: #e80041;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 30px;
@@ -1043,7 +1043,7 @@ height: 100px;
 	cursor: pointer;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #14bdee;
+	color: #e80041;
 	font-weight: 500;
 	letter-spacing: 0.1em;
 }
@@ -1094,7 +1094,7 @@ height: 100px;
 }
 .footer_logo_text span
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .footer_title
 {

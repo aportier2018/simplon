@@ -1,7 +1,7 @@
 <?php
   $host_name = 'localhost';
   $database = 'test';
-  $user_name = 'localhost/root';
+  $user_name = 'root';
   $password = '';
 
   $dbh = null;

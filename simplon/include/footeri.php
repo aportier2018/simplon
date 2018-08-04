@@ -59,27 +59,17 @@
                   <ul>
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="simplon/about.php">A propos de nous</a></li>
+                    <li><a href="simplon/blog.php">Blog</a></li>
+                    <li><a href="simplon/article">Article</a></li>
                     <li><a href="simplon/contact.php">Contact</a></li>
-                    <li><a href="simplon/courses.php">Formation</a></li>
-                    <li><a href="#">Evenements</a></li>
-                    <li><a href="#">Galerie</a></li>
-                    <li><a href="#">FAQs</a></li>
+
                   </ul>
                 </div>
               </div>
 
             </div>
 
-            <!-- <div class="col-lg-3 footer_col clearfix">
 
-               Footer links -->
-              <!-- <div class="footer_section footer_mobile">
-                <div class="footer_title">Mobile</div>
-                <div class="footer_mobile_content">
-                  <div class="footer_image"><a href="#"><img src="../images/mobile_1.png" alt=""></a></div>
-                  <div class="footer_image"><a href="#"><img src="../images/mobile_2.png" alt=""></a></div>
-                </div>
-              </div> -->
 
             </div>
 

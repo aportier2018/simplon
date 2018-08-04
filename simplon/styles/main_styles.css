@@ -447,7 +447,7 @@ height: 100px;
 	left: 0;
 	width: 100%;
 	height: 2px;
-	/* background: #14bdee; */
+	/* background: #e80041; */
 	content: '';
 }
 .search_button
@@ -552,7 +552,7 @@ height: 100px;
 }
 .hamburger:hover i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 /*********************************
@@ -650,7 +650,7 @@ height: 100px;
 }
 .menu_nav ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .menu .search
 {
@@ -1362,7 +1362,7 @@ height: 100px;
 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 24px;
-	color: #14bdee;
+	color: #e80041;
 	font-weight: 700;
 	line-height: 0.75;
 }
@@ -1370,7 +1370,7 @@ height: 100px;
 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 14px;
-	color: #14bdee;
+	color: #e80041;
 	font-weight: 400;
 	line-height: 0.75;
 	margin-top: 9px;
@@ -1403,7 +1403,7 @@ height: 100px;
 }
 .event_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .event_info_container
 {
@@ -1506,7 +1506,7 @@ height: 100px;
 }
 .team_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .team_subtitle
 {
@@ -1539,7 +1539,7 @@ height: 100px;
 }
 .social_list ul li:hover a i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .team_col .team_item
 {
@@ -1609,7 +1609,7 @@ height: 100px;
 }
 .news_post_large_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .news_post_meta
 {
@@ -1642,7 +1642,7 @@ height: 100px;
 }
 .news_post_meta ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .news_post_text
 {
@@ -1667,7 +1667,7 @@ height: 100px;
 }
 .news_post_link a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .news_posts_small
 {
@@ -1697,7 +1697,7 @@ height: 100px;
 }
 .news_post_small_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 /*********************************
@@ -1800,7 +1800,7 @@ height: 100px;
 	cursor: pointer;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #14bdee;
+	color: #e80041;
 	font-weight: 500;
 	letter-spacing: 0.1em;
 }

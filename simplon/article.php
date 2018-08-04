@@ -1,5 +1,7 @@
 <?php
-include("include/connectbddlocal.php")//include("connectbdd.php")
+//include("include/connectmaison.php")
+include("include/connectbddlocal.php")
+//include("connectbdd.php")
 ?>
 
 <!DOCTYPE html>
@@ -23,15 +25,14 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 		<!-- Header2 -->
 		<?php include("include/header2.php") ?>
 		<!-- Header2-->
+
 		<?php
 		$idarticle =$_GET["id"];
-
 		// $detail = 'SELECT * FROM article WHERE id_art="'.$idarticle.'"';
 		// $reponse = $dbh->query($detail);
 		// // // Execution de la requête
 		// // $reponse->execute();
 		// $row = $reponse->fetch(PDO::FETCH_ASSOC);
-
 		// $detail = 'SELECT * FROM article WHERE id_art="'.$idarticle.'"';
 		// $reponse = $dbh->prepare($detail);
 		// // Execution de la requête
@@ -39,30 +40,21 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 		//
 		// // On affiche chaque entrée une à une
 		// $row = $reponse->fetch(PDO::FETCH_ASSOC);
-
 		// Requête SQL qui va retourner toutes les entrées de la table "auteuredeacteur"
 		$reqaut = 'SELECT * FROM auteuredacteur NATURAL JOIN publie NATURAL JOIN article WHERE id_art="'.$idarticle.'"';
 		$auteur = $dbh->query($reqaut);
-
 		//requête pour recupérer les dates de publication en lien avec auteur
 		$reqdate = 'SELECT date_publicat FROM publie NATURAL JOIN article';
 		$datep = $dbh->query($reqdate);
 		$publication = $datep->fetch(PDO::FETCH_ASSOC);
-
 		//requête pour récupérer l'image
-		$source ='SELECT id_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
+		$source ='SELECT id_img, titre_img, source FROM image NATURAL JOIN integrer NATURAL JOIN article';
 		$image = $dbh->query($source);
 		$images = $image->fetch(PDO::FETCH_ASSOC);
-
 		//req pour récupérer  le texte
-		$reqtexte = 'SELECT texte FROM article';
-		$texte= $dbh->query($reqtexte);
-		$textes = $texte->fetch(PDO::FETCH_ASSOC);
-
-		$reqtitre = 'SELECT titre_art FROM article';
-		$titre= $dbh->query($reqtitre);
-		$titres = $titre->fetch(PDO::FETCH_ASSOC);
-
+		$req = 'SELECT * FROM article';
+		$art= $dbh->query($req);
+		$arts = $art->fetch(PDO::FETCH_ASSOC);
 
 		// On affiche chaque entrée une à une
 		while ($auteurs = $auteur->fetch(PDO::FETCH_ASSOC))
@@ -79,7 +71,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 							<ul>
 								<li><a href="../index.php">Accueil</a></li>
 								<li><a href="article.php">Article</a></li>
-								<li><?php echo $titres['titre_art'];?></li>
+								<li><?php echo $arts['titre_art'];?></li>
 							</ul>
 						</div>
 					</div>
@@ -88,9 +80,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 		</div>
 	</div>
 
-	<!-- <article >
-
-	</article>-->
+	<!-- <article >-->
 
 	<div class="blog">
 		<div class="container">
@@ -99,7 +89,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 				<!-- Blog Content -->
 				<div class="col-lg-8">
 					<div class="blog_content">
-						<div class="blog_title"><?php echo $titres['titre_art'];?></div>
+						<div class="blog_title"><?php echo $arts['titre_art'];?></div>
 						<div class="blog_post_meta">
 
 
@@ -114,7 +104,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 						</div>
 
 						<div class="blog_post_text">
-							<p><?php echo $textes['texte']; ?></a></p>
+							<p><?php echo $arts['texte']; ?></a></p>
 						</div>
 
 
@@ -122,11 +112,11 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 						<div class="blog_tags">
 							<span>Mot clé : </span>
 			 <?php
-			 	$idarticle = $_GET["id"];
+
 				$motcle ='SELECT mc_motcle FROM motcle NATURAL JOIN possede NATURAL JOIN article WHERE id_art="'.$idarticle.'"';
 				$mc = $dbh->query($motcle);
 
-				while($mcs = $mc->fetch(PDO::FETCH_ASSOC))
+				while ($mcs = $mc->fetch(PDO::FETCH_ASSOC))
 				{
 		 		?>
 						<ul>
@@ -136,11 +126,11 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 						</div>
 				<?php
 				}
-				$mc->closeCursor(); // Termine le traitement de la requête
+				$mc->closeCursor(); // Termine le traitement de la requête sur mot clé
 				?>
 			<?php
 	}
-	$auteur->closeCursor(); // Termine le traitement de la requête
+	$auteur->closeCursor(); // Termine le traitement de la requête sur auteur
 	?>
 				</div>
 						<div class="blog_social ml-lg-auto">

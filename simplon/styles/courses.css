@@ -443,7 +443,7 @@ height: 100px;
 	left: 0;
 	width: 100%;
 	height: 2px;
-	/* background: #14bdee; */
+	/* background: #e80041; */
 	content: '';
 }
 .search_button
@@ -470,7 +470,7 @@ height: 100px;
 .search_button:hover i,
 .shopping_cart:hover i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .header_search_form
 {
@@ -484,7 +484,7 @@ height: 100px;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
-	background: #14bdee;
+	background: #e80041;
 	z-index: -1;
 	opacity: 0;
 	-webkit-transition: all 400ms ease;
@@ -548,7 +548,7 @@ height: 100px;
 }
 .hamburger:hover i
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 /*********************************
@@ -646,7 +646,7 @@ height: 100px;
 }
 .menu_nav ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .menu .search
 {
@@ -792,7 +792,7 @@ height: 100px;
 }
 .breadcrumbs ul li a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 
 /*********************************
@@ -827,7 +827,7 @@ height: 100px;
 }
 .courses_search_input:focus
 {
-	outline: solid 1px #14bdee;
+	outline: solid 1px #e80041;
 }
 .courses_search_form > input
 {
@@ -852,7 +852,7 @@ height: 100px;
 {
 	width: 161px;
 	height: 46px;
-	background: #14bdee;
+	background: #e80041;
 	color: #FFFFFF;
 	font-size: 14px;
 	font-weight: 500;
@@ -920,7 +920,7 @@ height: 100px;
 }
 .course_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .course_teacher
 {
@@ -965,7 +965,7 @@ height: 100px;
 	font-family: 'Roboto Slab', serif;
 	font-size: 20px;
 	font-weight: 700;
-	color: #14bdee;
+	color: #e80041;
 }
 .course_price span
 {
@@ -981,7 +981,7 @@ height: 100px;
 	width: 210px;
 	height: 46px;
 	border-radius: 3px;
-	background: #14bdee;
+	background: #e80041;
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 41px;
@@ -1029,7 +1029,7 @@ height: 100px;
 .pagination_list li:hover,
 .pagination_list li.active
 {
-	background: #14bdee;
+	background: #e80041;
 }
 .pagination_list li a
 {
@@ -1166,7 +1166,7 @@ height: 100px;
 .sidebar_categories ul li:hover a,
 .sidebar_categories ul li:hover a::before
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .sidebar_latest
 {
@@ -1207,14 +1207,14 @@ height: 100px;
 }
 .latest_title a:hover
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .latest_price
 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 14px;
 	font-weight: 700;
-	color: #14bdee;
+	color: #e80041;
 	line-height: 0.75;
 	margin-top: 16px;
 }
@@ -1285,7 +1285,7 @@ height: 100px;
 }
 .tags_list li:hover
 {
-	background: #14bdee;
+	background: #e80041;
 }
 .tags_list li:hover a
 {
@@ -1327,7 +1327,7 @@ height: 100px;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #14bdee;
+	background: #e80041;
 	opacity: 0.7;
 }
 .banner_title
@@ -1353,7 +1353,7 @@ height: 100px;
 .banner_button a
 {
 	display: block;
-	color: #14bdee;
+	color: #e80041;
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: 0.1em;
@@ -1369,7 +1369,7 @@ height: 100px;
 }
 .banner_button:hover
 {
-	background: #14bdee;
+	background: #e80041;
 }
 .banner_button:hover a
 {
@@ -1476,7 +1476,7 @@ height: 100px;
 	cursor: pointer;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #14bdee;
+	color: #e80041;
 	font-weight: 500;
 	letter-spacing: 0.1em;
 }
@@ -1523,7 +1523,7 @@ height: 100px;
 }
 .footer_logo_text span
 {
-	color: #14bdee;
+	color: #e80041;
 }
 .footer_title
 {

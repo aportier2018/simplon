@@ -47,7 +47,7 @@
                 <li><a href="simplon/blog.php">Blog</a></li>
                 <li><a href="simplon/article.php">Article</a></li>
                 <li><a href="simplon/contact.php">Contact</a></li>
-                <li><a href="simplon/f_insererart.php">Ajouter un article</a></li>
+                <li><a href="simplon/form_ajout_art.php">Ajouter un article</a></li>
               </ul>
               <!-- <div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
 

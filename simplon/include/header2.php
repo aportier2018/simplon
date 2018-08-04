@@ -59,8 +59,8 @@
                 <li <?php if ($idpage == "contact"){echo 'class="active"';}?>>
                   <a href="contact.php">Contact</a></li>
 
-                <li <?php if ($idpage == "f_insererart"){echo 'class="active"';}?>>
-                  <a href="f_insererart.php">Ajouter un article</a></li>
+                <li <?php if ($idpage == "ajout"){echo 'class="active"';}?>>
+                  <a href="form_ajout_art.php">Ajouter un article</a></li>
               </ul>
              </nav>
 
