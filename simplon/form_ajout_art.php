@@ -6,7 +6,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<title>Contact</title>
+<title>Ajout d'un article</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Unicat project">
@@ -74,7 +74,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 												</div>
 
 												<div>
-													<div class="form_title">texte de l'article</div>
+													<div class="form_title">Texte de l'article</div>
 													<textarea name="texte" class="comment_input comment_textarea" required="required"></textarea>
 												</div>
 
@@ -84,14 +84,33 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 												</div>
 
 												<div>
-													<div class="form_title">Thème en 1 mot</div>
-													<input type="text" name="theme" class="comment_input" required="required">
+													<div class="form_title">Choississez un ou plusieurs thèmes</div>
+													<select multiple name="theme[]" style="text-align : center; width: 20%;" >
+															 <?php
+																	$reqthm = 'SELECT * FROM theme ORDER BY th_theme ASC';
+																	$thm = $dbh->prepare($reqthm);
+																	// Execution de la requÃªte
+																	$thm->execute();
+																	// On affiche chaque entrée une à  une
+																	while ($thms = $thm->fetch(PDO::FETCH_ASSOC))
+																		{
+																?>
+													 		<option value="<?php $thms['id_theme'];?>"><?php echo $thms['th_theme'];?></option>
+																 <?php
+																		}
+																			 $thm->closeCursor(); // Termine le traitement de la requÃªte
+																 ?>
+													</select>
+													<div>
+														<div class="form_title">Si votre thème n'est pas dans la liste, vous pouvez l'ajouter via le champ ci-dessous en 1 mot.</div>
+													<input type="text" name="theme" class="comment_input">
 												</div>
 
 												<div>
-													<select name="motcle">
+													<div class="form_title" >Mot-clé (ctr/cmd clic pour sélectionner plusieurs mots)</div>
+													<select multiple name="motcle[]" style="text-align : center; width: 20%;" >
 															 <?php
-																	$reqmc = 'SELECT * FROM motcle';
+																	$reqmc = 'SELECT * FROM motcle ORDER BY mc_motcle ASC';
 																	$mc = $dbh->prepare($reqmc);
 																	// Execution de la requÃªte
 																	$mc->execute();
@@ -105,6 +124,9 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 																			 $mc->closeCursor(); // Termine le traitement de la requÃªte
 																 ?>
 													</select>
+													<div>
+														<div class="form_title">Si votre mot clé n'est pas dans la liste, vous pouvez l'ajouter via le champ ci-dessous</div>
+													<input type="text" name="motcle" class="comment_input">
 												</div>
 
 													<button type="submit" class="comment_button trans_200">Ajouter l'article</button>
