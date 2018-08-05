@@ -51,41 +51,41 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 							<!-- Contact Form -->
 							<div class="col-lg-9 ">
 								<div class="contact_form">
-									<div class="contact_info_title">Formulaire d'ajout d'un article</div>
-										<form action="validation_ajout.php" method="POST" class="comment_form">
+									<!-- <div class="contact_info_title">Formulaire d'ajout d'un article</div>-->
+										<form action="ajout_art_bdd.php" method="POST" class="comment_form">
 												<div>
 													<div class="form_title">Nom de l'auteur</div>
-													<input type="text" name="nom" class="comment_input" required="required">
+													<input type="text" name="nom" class="comment_input">
 												</div>
 
 												<div>
 													<div class="form_title">Prénom de l'auteur</div>
-													<input type="text" name="prenom" class="comment_input" required="required">
+													<input type="text" name="prenom" class="comment_input">
 												</div>
 
 												<div>
 													<div class="form_title">Email</div>
-													<input type="email" name="email" class="comment_input" required="required">
+													<input type="email" name="email" class="comment_input" >
 												</div>
 
 												<div>
 													<div class="form_title">Titre</div>
-													<input type="text" name="titre" class="comment_input" required="required">
+													<input type="text" name="titre" class="comment_input">
 												</div>
 
 												<div>
 													<div class="form_title">Texte de l'article</div>
-													<textarea name="texte" class="comment_input comment_textarea" required="required"></textarea>
+													<textarea name="texte" class="comment_input comment_textarea" =""></textarea>
 												</div>
 
 												<div>
 													<div class="form_title">Resumé (250 mots maximum)</div>
-													<textarea name="resume" class="comment_input comment_textarea" required="required"></textarea>
+													<textarea name="resume" class="comment_input comment_textarea" =""></textarea>
 												</div>
 
 												<div>
 													<div class="form_title">Choississez un ou plusieurs thèmes</div>
-													<select multiple name="theme[]" style="text-align : center; width: 20%;" >
+													<select multiple name="theme[]" style="text-align : center; width: 30%;" >
 															 <?php
 																	$reqthm = 'SELECT * FROM theme ORDER BY th_theme ASC';
 																	$thm = $dbh->prepare($reqthm);
@@ -128,7 +128,14 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 														<div class="form_title">Si votre mot clé n'est pas dans la liste, vous pouvez l'ajouter via le champ ci-dessous</div>
 													<input type="text" name="motcle" class="comment_input">
 												</div>
-
+												<div>
+													<div class="form_title">nom de l'illustration</div>
+													<input type="text" name="nomimg" class="comment_input">
+												</div>
+												<div>
+													<div class="form_title">Lien pour une illustration</div>
+													<input type="text" name="lien" class="comment_input">
+												</div>
 													<button type="submit" class="comment_button trans_200">Ajouter l'article</button>
 									</form>
 								</div>
@@ -136,11 +143,11 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 						</div>
 					</div>
 				</div>
-				<!-- Footer2-->
-				<?php include("include/footer2.php"); ?>
-				<!-- Footer2 -->
-		</div>
 
+		</div>
+		<!-- Footer2-->
+		<?php include("include/footer2.php"); ?>
+		<!-- Footer2 -->
 
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="styles/bootstrap4/popper.js"></script>

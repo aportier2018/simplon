@@ -839,7 +839,7 @@ height: 100px;
 }
 .contact_info_container
 {
-	padding: 5%;
+
 	background-color:#e8e8e8;
 }
 .contact_info_title
@@ -853,6 +853,7 @@ height: 100px;
 .contact_form
 {
 	padding: 15px 50px;
+	margin : 2%;
 	border: 2px solid #fff;
 	border-radius: 29px;
 	background-color: #f3f3f3;
@@ -894,6 +895,13 @@ height: 100px;
 	color: #384158;
 	margin-bottom:5px;
 }
+
+.form_title select{
+		text-align:center;
+		width:20%;
+		border-radius : 5px;
+}
+
 .comment_button
 {
 	width: 150px;

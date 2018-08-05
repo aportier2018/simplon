@@ -155,11 +155,12 @@
 		</div>
 	</div>
 
-	<!-- Footer2-->
-	<?php include("include/footer2.php"); ?>
-	<!-- Footer2 -->
+
 
 </div>
+<!-- Footer2-->
+<?php include("include/footer2.php"); ?>
+<!-- Footer2-->
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
