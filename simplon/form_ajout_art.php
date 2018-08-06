@@ -33,7 +33,7 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 								<div class="breadcrumbs">
 									<ul
 										<li><a href="../index.php">Accueil ></a></li>
-										<li>Formulaire pour l'ajout d'un article</li>
+										<li>ajout d'un article à la base de données</li>
 									</ul>
 								</div>
 							</div>

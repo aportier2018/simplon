@@ -52,27 +52,37 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
         echo  $titre = addslashes($_POST['titre']);
         echo  $resume = addslashes($_POST['resume']);
         echo  $texte = addslashes($_POST['texte']);
-        echo    $theme= addslashes($_POST['theme']);
+        echo  $theme= addslashes($_POST['theme']);
 
         echo  $mc= addslashes($_POST['motcle']);
 
-        echo    $nomimg = addslashes($_POST['nomimg']);
+        echo  $nomimg = addslashes($_POST['nomimg']);
         echo  $source= addslashes($_POST['lien']);
 
-                   //Inserer les données dans les tables "article"
-        $insertart = "INSERT INTO article(titre_art, resume_art, texte) VALUES('$titre','$resume','$texte')";
+
+//vérifier la prèsence d'une donnée
+//	$test = 'SELECT th_theme';
+				//Inserer les données dans les tables "theme"
+			  $insert_th = "INSERT INTO theme(th_theme) VALUES('$theme')";
+			  $dbh->exec($insert_th);
+
+			//	récupérer l'id theme pour implémenter la table article
+				$select_id = $dbh->query("SELECT id_theme FROM theme  WHERE th_theme = '$theme'");
+				$lire_id = $select_id ->fetch();
+				$currentidth = $lire_id['id_theme'];
+
+        //Inserer les données dans les tables "article"
+        $insertart = "INSERT INTO article(titre_art, resume_art, texte, id_theme) VALUES('$titre','$resume','$texte','$currentidth')";
         $dbh->exec($insertart);
 
       //Inserer les données dans les tables "auteur"
-      $insert_auteur = "INSERT INTO auteuredateur(n_auteur, p_auteur, email) VALUES('$n_auteur','$p_auteur','$mail')";
-      $dbh->exec($insert_auteur);
+      	$insert_auteur = "INSERT INTO auteuredacteur(n_auteur, p_auteur, email) VALUES('$n_auteur','$p_auteur','$mail')";
+      	$dbh->exec($insert_auteur);
 
   //Inserer les données dans les tables "image"
         $insert_img = "INSERT INTO image(titre_img, source) VALUES('$nomimg','$source')";
         $dbh->exec($insert_img);
-  //Inserer les données dans les tables "theme"
-        $insert_th = "INSERT INTO theme(th_theme) VALUES('$theme')";
-        $dbh->exec($insert_th);
+
   //Inserer les données dans les tables "mot clé"
         $insert_mc = "INSERT INTO motcle(mc_motcle) VALUES('$mc')";
         $dbh->exec($insert_mc);
@@ -106,7 +116,6 @@ include("include/connectbddlocal.php")//include("connectbdd.php")
 
         $insert_possede ="INSERT INTO possede(id_art, id_motcle) VALUES ('$currentidart','$currentidmc')";
        $dbh->exec($insert_possede);
-
 
       ?>
 
