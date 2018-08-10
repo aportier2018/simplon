@@ -1,7 +1,7 @@
 <?php
   $host_name = 'localhost';
   $database = 'simplonsolo';
-  $user_name = 'localhost/root';
+  $user_name = 'root';
   $password = '';
 
   $dbh = null;
