@@ -1,6 +1,6 @@
 <?php
   $host_name = 'localhost';
-  $database = 'test';
+  $database = 'simplonsolo';
   $user_name = 'localhost/root';
   $password = '';
 
